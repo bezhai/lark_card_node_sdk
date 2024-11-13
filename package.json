@@ -1,0 +1,25 @@
+{
+  "name": "feishu-card",
+  "version": "0.0.1-alpha.0",
+  "description": "A collection of Feishu message card components for easy building",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bezhai/lark_card_node_sdk"
+  },
+  "keywords": [
+    "feishu",
+    "lark",
+    "message-card",
+    "components"
+  ],
+  "author": "Chiwei",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}
