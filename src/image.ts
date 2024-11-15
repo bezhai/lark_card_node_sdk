@@ -1,4 +1,4 @@
-import { PlainText } from "./text";
+import { PlainText } from "./common/text";
 
 // 定义 ImgComponent 接口
 export class ImgComponent {

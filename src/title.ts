@@ -1,5 +1,5 @@
-import { TitleColor } from "./color";
-import { PlainText } from "./text";
+import { TitleColor } from "./common/color";
+import { PlainText } from "./common/text";
 
 // 定义 TextTag 接口
 export interface TextTag {
@@ -18,17 +18,17 @@ export interface I18nTextTagList {
 }
 
 // 定义 Icon 接口
-export interface Icon {
+interface Icon {
   img_key: string; // 图片 key
 }
 
 // 定义 UdIconStyle 接口
-export interface UdIconStyle {
+interface UdIconStyle {
   color?: string; // 自定义图标颜色
 }
 
 // 定义 UdIcon 接口
-export interface UdIcon {
+interface UdIcon {
   token: string; // 图标 token
   style?: UdIconStyle; // 图标样式
 }
@@ -51,9 +51,4 @@ export class CardHeader {
     this.template = color;
     return this;
   }
-}
-
-// 卡片结构的接口
-export interface Card {
-  header: CardHeader; // 卡片的 header 字段
 }

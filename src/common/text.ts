@@ -17,3 +17,21 @@ export interface I18nContent {
   zh_hk?: string; // 中文（香港）
   zh_tw?: string; // 中文（台湾）
 }
+
+export type TextSize =
+  | "heading-0"
+  | "heading-1"
+  | "heading-2"
+  | "heading-3"
+  | "heading-4"
+  | "heading"
+  | "normal"
+  | "notation"
+  | "xxxx-large"
+  | "xxx-large"
+  | "xx-large"
+  | "x-large"
+  | "large"
+  | "medium"
+  | "small"
+  | "x-small";
