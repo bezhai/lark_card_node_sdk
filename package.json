@@ -10,6 +10,7 @@
     "LICENSE"
   ],
   "scripts": {
+    "build-index": "node generate-index.js",
     "build": "tsc",
     "prepublishOnly": "npm run build"
   },
@@ -27,5 +28,6 @@
   "license": "MIT",
   "devDependencies": {
     "typescript": "^4.9.5"
-  }
+  },
+  "type": "module"
 }

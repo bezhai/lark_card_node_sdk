@@ -5,3 +5,7 @@ export * from './element';
 export * from './image';
 export * from './text';
 export * from './title';
+export * from './v2/card_v2';
+export * from './v2/config';
+export * from './v2/element';
+export * from './v2/link';
