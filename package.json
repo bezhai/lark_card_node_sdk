@@ -1,6 +1,6 @@
 {
   "name": "feishu-card",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A collection of Feishu message card components for easy building",
   "main": "dist/cjs/index.js",
   "types": "dist/index.d.ts",
@@ -10,7 +10,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "build-index": "node generate-index.js",  
+    "build-index": "node generate-index.js",
     "build": "npm run build:cjs",
     "build:cjs": "tsc --module commonjs --outDir ./dist/cjs",
     "prepublishOnly": "npm run build"
