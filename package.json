@@ -11,7 +11,9 @@
   ],
   "scripts": {
     "build-index": "node generate-index.js",
-    "build": "tsc",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir ./dist/cjs",
+    "build": "npm run build:esm && npm run build:cjs",
     "prepublishOnly": "npm run build"
   },
   "repository": {

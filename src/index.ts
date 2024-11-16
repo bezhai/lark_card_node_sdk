@@ -5,6 +5,7 @@ export * from './common/icon';
 export * from './common/text';
 export * from './div';
 export * from './element';
+export * from './form';
 export * from './image';
 export * from './markdown';
 export * from './title';
