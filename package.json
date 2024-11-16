@@ -31,11 +31,13 @@
   "devDependencies": {
     "typescript": "^4.9.5"
   },
-  "type": "module",
+  "type": "module", 
   "exports": {
     ".": {
-      "import": "./dist/index.js",
+      "import": "./dist/index.js", 
+      "require": "./dist/cjs/index.js", 
       "types": "./dist/index.d.ts"
-    }
+    },
+    "./*": "./dist/*"
   }
 }
