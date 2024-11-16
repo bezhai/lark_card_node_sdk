@@ -2,7 +2,7 @@
   "name": "feishu-card",
   "version": "0.0.10",
   "description": "A collection of Feishu message card components for easy building",
-  "main": "dist/cjs/index.js",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist",
@@ -11,8 +11,7 @@
   ],
   "scripts": {
     "build-index": "node generate-index.js",
-    "build": "npm run build:cjs",
-    "build:cjs": "tsc --module commonjs --outDir ./dist/cjs",
+    "build": "tsc",
     "prepublishOnly": "npm run build"
   },
   "repository": {
@@ -25,7 +24,7 @@
     "message-card",
     "components"
   ],
-  "author": "Chiwei",
+  "author": "Bezhai",
   "license": "MIT",
   "devDependencies": {
     "typescript": "^4.9.5"
@@ -33,7 +32,7 @@
   "type": "commonjs",
   "exports": {
     ".": {
-      "require": "./dist/cjs/index.js",
+      "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
     }
   }
