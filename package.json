@@ -1,6 +1,6 @@
 {
   "name": "feishu-card",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A collection of Feishu message card components for easy building",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -31,11 +31,11 @@
   "devDependencies": {
     "typescript": "^4.9.5"
   },
-  "type": "module", 
+  "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/index.js", 
-      "require": "./dist/cjs/index.js", 
+      "import": "./dist/index.js",
+      "require": "./dist/cjs/index.js",
       "types": "./dist/index.d.ts"
     },
     "./*": "./dist/*"
