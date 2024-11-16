@@ -34,15 +34,23 @@ class Body {
 
 export class LarkV2Card {
   schema: "2.0";
-  config: Config;
-  header: CardHeader;
+  config?: Config;
+  header?: CardHeader;
   body: Body;
 
-  constructor(header: CardHeader, config: Config) {
+  constructor() {
     this.schema = "2.0";
-    this.header = header;
-    this.config = config;
     this.body = new Body();
+  }
+
+  withConfig(config: Config): this {
+    this.config = config;
+    return this;
+  }
+
+  withHeader(header: CardHeader): this {
+    this.header = header;
+    return this;
   }
 
   addElements(...elements: CardElementV2[]): this {
