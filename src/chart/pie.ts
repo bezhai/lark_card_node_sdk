@@ -21,19 +21,24 @@ export class PieChartSpec extends ChartSpec {
   valueField: string;
   categoryField: string;
   pie?: PieChartCustomization;
+  outerRadius?: number;
+  innerRadius?: number;
 
   constructor(
     title: { text: string },
     valueField: string,
     categoryField: string,
-    pie?: PieChartCustomization,
     label?: { visible?: boolean },
     legends?: ChartSpecLegend
   ) {
     super("pie", title, label, legends);
     this.valueField = valueField;
     this.categoryField = categoryField;
+  }
+
+  setPie(pie: PieChartCustomization) {
     this.pie = pie;
+    return this;
   }
 
   /**
@@ -45,5 +50,15 @@ export class PieChartSpec extends ChartSpec {
       [this.categoryField]: category,
     };
     this.addData(dataPoint);
+  }
+
+  setOuterRadius(radius: number) {
+    this.outerRadius = radius;
+    return this;
+  }
+
+  setInnerRadius(radius: number) {
+    this.innerRadius = radius;
+    return this;
   }
 }
