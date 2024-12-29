@@ -13,3 +13,7 @@ export * from './v2/card_v2';
 export * from './v2/config';
 export * from './v2/element';
 export * from './v2/link';
+export * from './chart/chart';
+export * from './chart/line';
+export * from './chart/pie';
+export * from './chart/wordCloud';

@@ -218,3 +218,10 @@ export type Color =
   | Wathet;
 
 export type TitleColor = Color | "default";
+
+export type ChartColorTheme =
+  | "brand"
+  | "rainbow"
+  | "complementary"
+  | "converse"
+  | "primary";

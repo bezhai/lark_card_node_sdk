@@ -1,12 +1,22 @@
+import { ChartElement } from "./chart/chart";
+import { LineChartSpec } from "./chart/line";
+import { PieChartSpec } from "./chart/pie";
+import { WordCloudChartSpec } from "./chart/wordCloud";
 import { ColumnSet } from "./column";
 import { DivComponent } from "./div";
 import { ImgComponent } from "./image";
 import { MarkdownComponent } from "./markdown";
 
-
 type AllElement = ImgComponent | ColumnSet | DivComponent | MarkdownComponent;
 
-export type CardElement = ImgComponent | ColumnSet | DivComponent | MarkdownComponent;
+export type CardElement =
+  | ImgComponent
+  | ColumnSet
+  | DivComponent
+  | MarkdownComponent
+  | ChartElement<PieChartSpec>
+  | ChartElement<WordCloudChartSpec>
+  | ChartElement<LineChartSpec>;
 
 export type ColumnElement = ImgComponent | DivComponent | MarkdownComponent;
 
