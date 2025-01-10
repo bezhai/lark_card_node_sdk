@@ -1,4 +1,4 @@
-import { FormElement } from "./element";
+import type { FormElement } from "./element";
 
 export class FormComponent {
   tag: "form" = "form";

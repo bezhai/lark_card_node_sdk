@@ -1,7 +1,6 @@
 export class PlainText {
   tag: "plain_text"; // 固定值 "plain_text"
   content: string; // 文本内容
-  i18n?: I18nContent; // 多语言内容，可选
 
   constructor(content: string) {
     this.tag = "plain_text";

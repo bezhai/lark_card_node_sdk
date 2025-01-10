@@ -1,11 +1,14 @@
-import { ChartElement } from "./chart/chart";
-import { LineChartSpec } from "./chart/line";
-import { PieChartSpec } from "./chart/pie";
-import { WordCloudChartSpec } from "./chart/wordCloud";
-import { ColumnSet } from "./column";
-import { DivComponent } from "./div";
-import { ImgComponent } from "./image";
-import { MarkdownComponent } from "./markdown";
+import type { ActionComponent } from "./action";
+import type { ButtonComponent } from "./button";
+import type { ChartElement } from "./chart/chart";
+import type { LineChartSpec } from "./chart/line";
+import type { PieChartSpec } from "./chart/pie";
+import type { WordCloudChartSpec } from "./chart/wordCloud";
+import type { ColumnSet } from "./column";
+import type { DivComponent } from "./div";
+import type { ImgComponent } from "./image";
+import type { InteractiveContainerComponent } from "./interactiveContainer";
+import type { MarkdownComponent } from "./markdown";
 
 type AllElement = ImgComponent | ColumnSet | DivComponent | MarkdownComponent;
 
@@ -16,7 +19,9 @@ export type CardElement =
   | MarkdownComponent
   | ChartElement<PieChartSpec>
   | ChartElement<WordCloudChartSpec>
-  | ChartElement<LineChartSpec>;
+  | ChartElement<LineChartSpec>
+  | ButtonComponent
+  | ActionComponent;
 
 export type ColumnElement = ImgComponent | DivComponent | MarkdownComponent;
 
@@ -27,3 +32,13 @@ export type ColumnElement = ImgComponent | DivComponent | MarkdownComponent;
  * 表单容器组件不可被内嵌在其它组件内，只可放在卡片根节点下。
  */
 export type FormElement = Exclude<AllElement, DivComponent>;
+
+/**
+ * 交互容器内嵌的组件。仅支持内嵌普通文本、富文本、图片、备注、分栏、勾选器、交互容器组件。
+ */
+export type InteractiveElement = DivComponent | ImgComponent | MarkdownComponent | ColumnSet | InteractiveContainerComponent;
+
+/**
+ * 卡片1.0 支持的交互组件
+ */
+export type ActionElement = ButtonComponent;

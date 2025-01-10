@@ -1,3 +1,5 @@
+export * from './action';
+export * from './button';
 export * from './card';
 export * from './column';
 export * from './common/color';
@@ -7,6 +9,7 @@ export * from './div';
 export * from './element';
 export * from './form';
 export * from './image';
+export * from './interactiveContainer';
 export * from './markdown';
 export * from './title';
 export * from './v2/card_v2';

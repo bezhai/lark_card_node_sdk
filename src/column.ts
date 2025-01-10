@@ -1,4 +1,4 @@
-import { ColumnElement } from "./element";
+import type { ColumnElement } from "./element";
 
 export type HorizontalSpacing = 'default' | 'small' | 'large'; // 水平间距类型
 export type HorizontalAlign = 'left' | 'center' | 'right'; // 水平对齐方式
@@ -14,7 +14,6 @@ export interface MultiUrlAction {
   ios_url?: string; // iOS端链接
   android_url?: string; // 安卓端链接
 }
-
 
 // 列组件类
 export class Column {

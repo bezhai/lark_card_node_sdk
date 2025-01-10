@@ -2,10 +2,10 @@ import { CardElement } from "./element";
 import { CardHeader } from "./title";
 
 export class LarkCard {
-  header: CardHeader;
+  header?: CardHeader;
   elements: CardElement[];
 
-  constructor(header: CardHeader) {
+  constructor(header?: CardHeader) {
     this.header = header;
     this.elements = [];
   }
