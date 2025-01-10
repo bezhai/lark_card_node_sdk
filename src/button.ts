@@ -22,6 +22,12 @@ type WidthType =
   | "fill" // 卡片最大支持宽度
   | "default" // 默认宽度
   | `${number}px`; // 固定宽度，范围为 [100, ∞]px, 超出卡片宽度时将按最大支持宽度展示
+type ActionType =
+  | "link" // 当前按钮仅支持链接跳转
+  | "request" // 当前按钮仅支持回传交互
+  | "multi" // 当前按钮同时支持链接跳转和回传交互
+  | "form_submit" // 将当前按钮与提交事件绑定。用户点击后，将触发表单容器的提交事件，异步提交所有已填写的表单项内容
+  | "form_reset"; // 将当前按钮与取消提交事件绑定。用户点击后，将触发表单容器的取消提交事件，重置所有表单组件的输入值为初始值
 
 // 定义确认提示类型
 interface ConfirmTips {
@@ -41,7 +47,7 @@ export class ButtonComponent {
   disabled_tips?: PlainText; // 按钮禁用时的提示信息
   confirm?: ConfirmTips; // 按钮点击时的二次确认提示信息
   behaviors: Behavior[] = []; // 行为配置数组
-
+  value?: Record<string, unknown>; // 历史配置, 按钮携带的业务信息
 
   setType(type: ButtonType) {
     this.type = type;
@@ -115,5 +121,22 @@ export class ButtonComponent {
     };
     this.behaviors.push(behavior);
     return this;
+  }
+
+  addValue(value: Record<string, unknown>) {
+    this.value = value;
+    return this;
+  }
+}
+
+export class TableButtonComponent extends ButtonComponent {
+  name: string; // 按钮的唯一标识，用于识别用户点击的是哪个按钮
+  required?: boolean; // 是否必填，默认值为 false
+  action_type: ActionType; // 按钮的交互类型
+
+  constructor(name: string, action_type: ActionType) {
+    super();
+    this.name = name;
+    this.action_type = action_type;
   }
 }

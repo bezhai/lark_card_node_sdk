@@ -1,5 +1,5 @@
 import type { ActionComponent } from "./action";
-import type { ButtonComponent } from "./button";
+import type { ButtonComponent, TableButtonComponent } from "./button";
 import type { ChartElement } from "./chart/chart";
 import type { LineChartSpec } from "./chart/line";
 import type { PieChartSpec } from "./chart/pie";
@@ -10,7 +10,7 @@ import type { ImgComponent } from "./image";
 import type { InteractiveContainerComponent } from "./interactiveContainer";
 import type { MarkdownComponent } from "./markdown";
 
-type AllElement = ImgComponent | ColumnSet | DivComponent | MarkdownComponent;
+type AllElement = ImgComponent | ColumnSet | DivComponent | MarkdownComponent | TableButtonComponent;
 
 export type CardElement =
   | ImgComponent
