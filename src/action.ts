@@ -10,8 +10,9 @@ export class ActionComponent {
   actions: ActionElement[] = [];
   layout?: LayoutType;
 
-  addAction(action: ActionElement) {
-    this.actions.push(action);
+  addActions(...actions: ActionElement[]) {
+    this.actions.push(...actions);
+    return this;
   }
 
   setLayout(layout: LayoutType) {
