@@ -1,5 +1,6 @@
 import { Behavior } from "./common/behavior";
 import { Color } from "./common/color";
+import { CornerRadiusType } from "./common/style";
 import { PlainText } from "./common/text";
 import { InteractiveElement } from "./element";
 
@@ -7,7 +8,6 @@ import { InteractiveElement } from "./element";
 type BackgroundStyle = "default" | "laser" | Color;
 type WidthType = "fill" | "auto" | `${number}px`; // 支持具体数值如 "20px", 范围是[16,999]
 type HeightType = "auto" | `${number}px`; // 支持具体数值如 "100px", 范围是[10,999]
-type CornerRadiusType = `${number}px` | `${number}%`; // 交互容器的圆角半径，单位是像素（px）或百分比（%）。取值遵循以下格式：[0,∞]px，如 "10px"; [0,100]%，如 "30%"
 type PaddingType =
   | `${number}px`
   | `${number}px ${number}px ${number}px ${number}px`; // 交互容器的内边距。值的取值范围为 [0,28]px。支持填写单值或多值：单值：如 "10px"，表示容器内四个内边距都为 10px; 多值：如 "4px 12px 4px 12px"，表示容器内上、右、下、左的内边距分别为 4px，12px，4px，12px。四个值必填，使用空格间隔
