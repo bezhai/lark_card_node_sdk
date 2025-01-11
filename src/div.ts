@@ -2,7 +2,7 @@ import { TitleColor } from "./common/color";
 import { Icon } from "./common/icon";
 import { TextSize } from "./common/text";
 
-class Text {
+export class DivText {
   tag: "plain_text" | "lark_md" = "plain_text"; // 文本类型的标签
   content: string; // 文本内容。当 tag 为 lark_md 时，支持部分 Markdown 语法的文本内容。
   text_size: TextSize = "normal"; // 文本大小。默认值 normal
@@ -37,10 +37,10 @@ class Text {
 
 export class DivComponent {
   tag: "div";
-  text: Text;
+  text: DivText;
   icon?: Icon;
 
-  constructor(text: Text) {
+  constructor(text: DivText) {
     this.tag = "div";
     this.text = text;
   }
