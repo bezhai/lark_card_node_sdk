@@ -11,7 +11,8 @@ export class FormComponent {
     this.elements = elements;
   }
 
-  appendElement(element: FormElement) {
-    this.elements.push(element);
+  appendElements(...elements: FormElement[]) {
+    this.elements.push(...elements);
+    return this;
   }
 }

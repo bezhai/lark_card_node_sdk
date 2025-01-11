@@ -9,6 +9,7 @@ export * from './div';
 export * from './element';
 export * from './form';
 export * from './image';
+export * from './input';
 export * from './interactiveContainer';
 export * from './markdown';
 export * from './title';

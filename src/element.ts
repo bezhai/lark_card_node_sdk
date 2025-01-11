@@ -7,10 +7,17 @@ import type { WordCloudChartSpec } from "./chart/wordCloud";
 import type { ColumnSet } from "./column";
 import type { DivComponent } from "./div";
 import type { ImgComponent } from "./image";
+import type { InputComponent } from "./input";
 import type { InteractiveContainerComponent } from "./interactiveContainer";
 import type { MarkdownComponent } from "./markdown";
 
-type AllElement = ImgComponent | ColumnSet | DivComponent | MarkdownComponent | TableButtonComponent;
+type AllElement =
+  | ImgComponent
+  | ColumnSet
+  | DivComponent
+  | MarkdownComponent
+  | TableButtonComponent
+  | InputComponent;
 
 export type CardElement =
   | ImgComponent
@@ -36,7 +43,12 @@ export type FormElement = Exclude<AllElement, DivComponent>;
 /**
  * 交互容器内嵌的组件。仅支持内嵌普通文本、富文本、图片、备注、分栏、勾选器、交互容器组件。
  */
-export type InteractiveElement = DivComponent | ImgComponent | MarkdownComponent | ColumnSet | InteractiveContainerComponent;
+export type InteractiveElement =
+  | DivComponent
+  | ImgComponent
+  | MarkdownComponent
+  | ColumnSet
+  | InteractiveContainerComponent;
 
 /**
  * 卡片1.0 支持的交互组件

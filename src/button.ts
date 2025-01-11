@@ -1,5 +1,6 @@
 import type { Behavior } from "./common/behavior";
 import type { Icon } from "./common/icon";
+import { WidthType } from "./common/style";
 import { PlainText } from "./common/text";
 
 // 定义按钮类型
@@ -18,10 +19,6 @@ type ButtonSize =
   | "small" // 小尺寸，PC 端为 28 px；移动端为 28 px
   | "medium" // 中等尺寸，PC 端为 32 px；移动端为 36 px
   | "large"; // 大尺寸，PC 端为 40 px；移动端为 48 px
-type WidthType =
-  | "fill" // 卡片最大支持宽度
-  | "default" // 默认宽度
-  | `${number}px`; // 固定宽度，范围为 [100, ∞]px, 超出卡片宽度时将按最大支持宽度展示
 type ActionType =
   | "link" // 当前按钮仅支持链接跳转
   | "request" // 当前按钮仅支持回传交互
