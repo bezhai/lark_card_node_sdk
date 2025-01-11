@@ -28,7 +28,9 @@ export type CardElement =
   | ChartElement<WordCloudChartSpec>
   | ChartElement<LineChartSpec>
   | ButtonComponent
-  | ActionComponent;
+  | ActionComponent
+  | FormElement
+  | InteractiveContainerComponent;
 
 export type ColumnElement = ImgComponent | DivComponent | MarkdownComponent;
 
