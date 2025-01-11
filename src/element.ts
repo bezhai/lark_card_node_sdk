@@ -6,6 +6,7 @@ import type { PieChartSpec } from "./chart/pie";
 import type { WordCloudChartSpec } from "./chart/wordCloud";
 import type { ColumnSet } from "./column";
 import type { DivComponent } from "./div";
+import type { FormComponent } from "./form";
 import type { ImgComponent } from "./image";
 import type { InputComponent } from "./input";
 import type { InteractiveContainerComponent } from "./interactiveContainer";
@@ -29,7 +30,7 @@ export type CardElement =
   | ChartElement<LineChartSpec>
   | ButtonComponent
   | ActionComponent
-  | FormElement
+  | FormComponent
   | InteractiveContainerComponent;
 
 export type ColumnElement = ImgComponent | DivComponent | MarkdownComponent;
