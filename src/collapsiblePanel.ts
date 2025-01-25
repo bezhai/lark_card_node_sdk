@@ -92,8 +92,8 @@ export class CollapsiblePanelComponent {
   };
   elements: CardElement[] = [];
 
-  constructor(title: string, titleType: HeaderTitleType = "plain_text") {
-    this.header = new CollapsiblePanelHeader(title, titleType);
+  constructor(header: CollapsiblePanelHeader) {
+    this.header = header;
   }
 
   setDirection(direction: Direction) {
