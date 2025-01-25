@@ -4,6 +4,7 @@ import type { ChartElement } from "./chart/chart";
 import type { LineChartSpec } from "./chart/line";
 import type { PieChartSpec } from "./chart/pie";
 import type { WordCloudChartSpec } from "./chart/wordCloud";
+import { CollapsiblePanelComponent } from "./collapsiblePanel";
 import type { ColumnSet } from "./column";
 import type { DivComponent } from "./div";
 import type { FormComponent } from "./form";
@@ -31,7 +32,8 @@ export type CardElement =
   | ButtonComponent
   | ActionComponent
   | FormComponent
-  | InteractiveContainerComponent;
+  | InteractiveContainerComponent
+  | CollapsiblePanelComponent;
 
 export type ColumnElement = ImgComponent | DivComponent | MarkdownComponent;
 

@@ -21,3 +21,10 @@ export type WidthType =
   | "fill" // 卡片最大支持宽度
   | "default" // 默认宽度
   | `${number}px`; // 固定宽度，范围为 [100, ∞]px, 超出卡片宽度时将按最大支持宽度展示
+
+export type SinglePxValue = "0" | `${number}px`;
+
+export type PxValue =
+  | SinglePxValue
+  | `${SinglePxValue} ${SinglePxValue}`
+  | `${SinglePxValue} ${SinglePxValue} ${SinglePxValue} ${SinglePxValue}`;

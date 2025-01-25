@@ -1,6 +1,7 @@
 export * from './action';
 export * from './button';
 export * from './card';
+export * from './collapsiblePanel';
 export * from './column';
 export * from './common/color';
 export * from './common/icon';
