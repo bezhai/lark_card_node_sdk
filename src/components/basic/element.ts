@@ -1,15 +1,16 @@
+import { ChartElement } from "../chart/chart";
+import { LineChartSpec } from "../chart/line";
+import { PieChartSpec } from "../chart/pie";
+import { WordCloudChartSpec } from "../chart/wordCloud";
+import { FormComponent } from "../form/form";
+import { InputComponent } from "../form/input";
 import type { ActionComponent } from "./action";
-import type { ButtonComponent, TableButtonComponent } from "./button";
-import type { ChartElement } from "./chart/chart";
-import type { LineChartSpec } from "./chart/line";
-import type { PieChartSpec } from "./chart/pie";
-import type { WordCloudChartSpec } from "./chart/wordCloud";
+import type { ButtonComponent, TableButtonComponent } from "../form/button";
+import type { SelectComponent } from "../form/select";
 import { CollapsiblePanelComponent } from "./collapsiblePanel";
 import type { ColumnSet } from "./column";
 import type { DivComponent } from "./div";
-import type { FormComponent } from "./form";
 import type { ImgComponent } from "./image";
-import type { InputComponent } from "./input";
 import type { InteractiveContainerComponent } from "./interactiveContainer";
 import type { MarkdownComponent } from "./markdown";
 
@@ -19,7 +20,8 @@ type AllElement =
   | DivComponent
   | MarkdownComponent
   | TableButtonComponent
-  | InputComponent;
+  | InputComponent
+  | SelectComponent;
 
 export type CardElement =
   | ImgComponent

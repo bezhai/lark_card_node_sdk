@@ -1,4 +1,4 @@
-import { ChartSpec } from "./chartSpec";
+import { ChartSpec } from "./chartSpec";  // Keep as non-type import since we extend from it
 
 export class WordCloudChartSpec extends ChartSpec {
   nameField: string;

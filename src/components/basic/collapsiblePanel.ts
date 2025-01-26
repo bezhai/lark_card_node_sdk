@@ -1,7 +1,7 @@
+import { Color } from "../../common/color";
+import { Icon } from "../../common/icon";
+import { PxValue } from "../../common/style";
 import { CardElement } from "./element";
-import { Icon } from "./common/icon";
-import { PxValue } from "./common/style";
-import { Color } from "./common/color";
 
 type HeaderTitleType = "plain_text" | "markdown";
 type IconPosition = "left" | "right" | "follow_text";

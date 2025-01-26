@@ -1,5 +1,5 @@
-import type { WidthType } from "./common/style";
-import type { PlainText } from "./common/text";
+import type { WidthType } from "../../common/style";
+import type { PlainText } from "../../common/text";
 
 type InputType =
   | "text" // 普通文本

@@ -1,5 +1,5 @@
-import { CardElement } from "./element";
-import { CardHeader } from "./title";
+import type { CardElement } from "./components/basic/element";
+import type { CardHeader } from "./components/basic/title";
 
 export class LarkCard {
   header?: CardHeader;

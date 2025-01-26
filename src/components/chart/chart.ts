@@ -1,5 +1,5 @@
-import { ChartColorTheme } from "../common/color";
-import { ChartSpec } from "./chartSpec";
+import type { ChartColorTheme } from "../../common/color";
+import type { ChartSpec } from "./chartSpec";
 
 export class ChartElement<T extends ChartSpec> {
   tag: "chart" = "chart";

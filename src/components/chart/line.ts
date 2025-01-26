@@ -1,5 +1,6 @@
-import { LegendOrient, LineCurveType } from "../common/style";
-import { ChartSpec, ChartSpecLegend } from "./chartSpec";
+import type { LineCurveType } from "../../common/style";
+import { ChartSpec } from "./chartSpec";
+import type { ChartSpecLegend } from "./chartSpec";
 
 export class LineChartSpec extends ChartSpec {
   xField: string;

@@ -1,5 +1,5 @@
-import { Icon } from "./common/icon";
-import { TextSize } from "./common/text";
+import { Icon } from "../../common/icon";
+import { TextSize } from "../../common/text";
 
 export class MarkdownComponent {
   tag: "markdown" = "markdown";

@@ -1,6 +1,6 @@
-import { CardHeader } from "../title";
-import { Config } from "./config";
-import { CardElementV2 } from "./element";
+import type { CardHeader } from "../components/basic/title";
+import type { Config } from "./config";
+import type { CardElementV2 } from "./element";
 
 class Body {
   elements: CardElementV2[];

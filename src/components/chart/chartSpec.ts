@@ -1,4 +1,4 @@
-import { LegendOrient, LegendPosition } from "../common/style";
+import type { LegendOrient, LegendPosition } from "../../common/style";
 
 export interface ChartSpecLegend {
   orient: LegendOrient;

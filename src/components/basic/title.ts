@@ -1,5 +1,5 @@
-import { TitleColor } from "./common/color";
-import { PlainText } from "./common/text";
+import { TitleColor } from "../../common/color";
+import { PlainText } from "../../common/text";
 
 // 定义 TextTag 接口
 export interface TextTag {

@@ -1,4 +1,5 @@
-import { ChartSpec, ChartSpecLegend } from "./chartSpec";
+import { ChartSpec } from "./chartSpec";
+import type { ChartSpecLegend } from "./chartSpec";
 
 type PieState = "hover" | "selected";
 

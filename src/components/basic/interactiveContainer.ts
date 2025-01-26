@@ -1,7 +1,7 @@
-import { Behavior } from "./common/behavior";
-import { Color } from "./common/color";
-import { CornerRadiusType } from "./common/style";
-import { PlainText } from "./common/text";
+import { Behavior } from "../../common/behavior";
+import { Color } from "../../common/color";
+import { CornerRadiusType } from "../../common/style";
+import { PlainText } from "../../common/text";
 import { InteractiveElement } from "./element";
 
 // 定义可枚举的类型
