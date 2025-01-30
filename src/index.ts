@@ -9,6 +9,7 @@ export * from './common/icon';
 export * from './common/text';
 export * from './components/basic/div';
 export * from './components/basic/element';
+export * from './components/basic/hr';
 export * from './components/form/form';
 export * from './components/basic/image';
 export * from './components/form/input';

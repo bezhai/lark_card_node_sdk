@@ -1,6 +1,5 @@
-import { TitleColor } from "../../common/color";
-import { Icon } from "../../common/icon";
-import { CommonText, TextSize } from "../../common/text";
+import type { Icon } from "../../common/icon";
+import { CommonText } from "../../common/text";
 
 export class DivText extends CommonText {
   lines?: number; // 内容最大显示行数，超出设置行的内容用... 省略。

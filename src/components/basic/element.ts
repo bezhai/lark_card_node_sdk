@@ -10,6 +10,7 @@ import type { SelectComponent } from "../form/select";
 import { CollapsiblePanelComponent } from "./collapsiblePanel";
 import type { ColumnSet } from "./column";
 import type { DivComponent } from "./div";
+import type { HrComponent } from "./hr";
 import type { ImgComponent } from "./image";
 import type { InteractiveContainerComponent } from "./interactiveContainer";
 import type { MarkdownComponent } from "./markdown";
@@ -18,6 +19,7 @@ type AllElement =
   | ImgComponent
   | ColumnSet
   | DivComponent
+  | HrComponent
   | MarkdownComponent
   | TableButtonComponent
   | InputComponent
@@ -27,6 +29,7 @@ export type CardElement =
   | ImgComponent
   | ColumnSet
   | DivComponent
+  | HrComponent
   | MarkdownComponent
   | ChartElement<PieChartSpec>
   | ChartElement<WordCloudChartSpec>
@@ -37,7 +40,11 @@ export type CardElement =
   | InteractiveContainerComponent
   | CollapsiblePanelComponent;
 
-export type ColumnElement = ImgComponent | DivComponent | MarkdownComponent;
+export type ColumnElement =
+  | ImgComponent
+  | DivComponent
+  | HrComponent
+  | MarkdownComponent;
 
 /**
  * 在卡片 JSON 1.0 结构中：
