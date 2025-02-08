@@ -1,4 +1,5 @@
 import type { LegendOrient, LegendPosition } from "../../common/style";
+import { BaseClass } from "../../common/json";
 
 export interface ChartSpecLegend {
   orient: LegendOrient;
@@ -6,7 +7,7 @@ export interface ChartSpecLegend {
   visible?: boolean;  
 }
 
-export class ChartSpec {
+export class ChartSpec extends BaseClass {
   type: string;
   title: {
     text: string;
@@ -27,6 +28,7 @@ export class ChartSpec {
     },
     legends?: { orient: LegendOrient; position: LegendPosition; visible?: boolean }
   ) {
+    super();
     this.type = type;
     this.title = title;
     this.data = { values: [] };

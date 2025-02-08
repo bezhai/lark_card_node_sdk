@@ -1,12 +1,13 @@
 import type { WidthType } from "../../common/style";
 import type { PlainText } from "../../common/text";
+import { BaseComponent } from "../basic/basic";
 
 type InputType =
   | "text" // 普通文本
   | "multiline_text" // 多行文本
   | "password" // 密码
 
-export class InputComponent {
+export class InputComponent extends BaseComponent {
   tag: "input" = "input";
   name?: string; // 表单容器的唯一标识。用于识别用户在交互后，提交的是哪个表单容器的数据。
   placeholder?: PlainText; // 占位符，无输入时展示
@@ -23,10 +24,6 @@ export class InputComponent {
   required?: boolean; // 是否必填，默认值为 false
   disabled?: boolean; // 是否禁用，默认值为 false
   value?: string | Record<string, unknown>; // 输入框携带的业务信息
-
-  constructor(name?: string) {
-    this.name = name;
-  }
 
   setPlaceholder(placeholder: PlainText) {
     this.placeholder = placeholder;

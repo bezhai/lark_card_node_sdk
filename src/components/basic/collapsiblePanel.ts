@@ -1,7 +1,13 @@
 import { Color } from "../../common/color";
 import { Icon } from "../../common/icon";
-import { HorizontalAlign, HorizontalSpacing, PxValue } from "../../common/style";
-import { CardElement } from "./element";
+import {
+  HorizontalAlign,
+  HorizontalSpacing,
+  PxValue,
+} from "../../common/style";
+import { BaseComponent, ValidIdentifier } from "./basic";
+import { CardElement, CollapsiblePanelElement } from "./element";
+import { BaseClass } from "../../common/json";
 
 type HeaderTitleType = "plain_text" | "markdown";
 type IconPosition = "left" | "right" | "follow_text";
@@ -10,7 +16,7 @@ type VerticalAlign = "top" | "center" | "bottom";
 type IconExpandedAngleType = -180 | -90 | 90 | 180;
 type HeaderWidthType = "auto_when_fold" | "auto" | "fill";
 
-export class CollapsiblePanelHeader {
+export class CollapsiblePanelHeader extends BaseComponent {
   title: {
     tag: HeaderTitleType;
     content: string;
@@ -24,10 +30,15 @@ export class CollapsiblePanelHeader {
   icon_position?: IconPosition;
   icon_expanded_angle?: IconExpandedAngleType;
 
-  constructor(title: string, titleType: HeaderTitleType = "plain_text") {
+  constructor(
+    element_id: ValidIdentifier,
+    title: string,
+    titleType: HeaderTitleType = "plain_text"
+  ) {
+    super(element_id);
     this.title = {
       tag: titleType,
-      content: title
+      content: title,
     };
   }
 
@@ -72,7 +83,7 @@ export class CollapsiblePanelHeader {
   }
 }
 
-export class CollapsiblePanelComponent {
+export class CollapsiblePanelComponent extends BaseClass {
   tag: "collapsible_panel" = "collapsible_panel";
   direction?: Direction = "vertical";
   vertical_spacing?: string;
@@ -88,9 +99,10 @@ export class CollapsiblePanelComponent {
     color?: Color;
     corner_radius?: `${number}px`;
   };
-  elements: CardElement[] = [];
+  elements: CollapsiblePanelElement[] = [];
 
   constructor(header: CollapsiblePanelHeader) {
+    super();
     this.header = header;
   }
 
@@ -142,17 +154,17 @@ export class CollapsiblePanelComponent {
   setBorder(color: Color, corner_radius?: `${number}px`) {
     this.border = {
       color,
-      corner_radius
+      corner_radius,
     };
     return this;
   }
 
-  addElement(element: CardElement) {
+  addElement(element: CollapsiblePanelElement) {
     this.elements.push(element);
     return this;
   }
 
-  setElements(elements: CardElement[]) {
+  setElements(elements: CollapsiblePanelElement[]) {
     this.elements = elements;
     return this;
   }

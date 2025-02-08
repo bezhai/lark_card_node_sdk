@@ -1,19 +1,21 @@
-export class StandardIcon {
-  tag: "standard_icon";
-  token: string;
-  color: string;
+import { BaseClass } from "./json";
+
+export class StandardIcon extends BaseClass {
+  private readonly tag: "standard_icon" = "standard_icon";
+  private token: string;
+  private color: string;
   constructor(token: string, color: string) {
-    this.tag = "standard_icon";
+    super();
     this.token = token;
     this.color = color;
   }
 }
 
-export class CustomIcon {
-  tag: "custom_icon";
-  img_key: string;
+export class CustomIcon extends BaseClass {
+  private readonly tag: "custom_icon" = "custom_icon";
+  private img_key: string;
   constructor(img_key: string) {
-    this.tag = "custom_icon";
+    super();
     this.img_key = img_key;
   }
 }

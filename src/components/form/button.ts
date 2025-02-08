@@ -3,6 +3,7 @@ import { ConfirmTips } from "../../common/confirm";
 import type { Icon } from "../../common/icon";
 import type { WidthType } from "../../common/style";
 import { PlainText } from "../../common/text";
+import { BaseComponent, ValidIdentifier } from "../basic/basic";
 
 // 定义按钮类型
 type ButtonType =
@@ -27,7 +28,7 @@ type ActionType =
   | "form_submit" // 将当前按钮与提交事件绑定。用户点击后，将触发表单容器的提交事件，异步提交所有已填写的表单项内容
   | "form_reset"; // 将当前按钮与取消提交事件绑定。用户点击后，将触发表单容器的取消提交事件，重置所有表单组件的输入值为初始值
 
-export class ButtonComponent {
+export class ButtonComponent extends BaseComponent {
   tag: "button" = "button"; // 固定为 "button"
   type: ButtonType = "default"; // 按钮类型，默认值为 "default"
   size?: ButtonSize = "medium"; // 按钮尺寸，默认值为 "medium"
@@ -123,8 +124,8 @@ export class TableButtonComponent extends ButtonComponent {
   required?: boolean; // 是否必填，默认值为 false
   action_type: ActionType; // 按钮的交互类型
 
-  constructor(name: string, action_type: ActionType) {
-    super();
+  constructor(element_id: ValidIdentifier, name: string, action_type: ActionType) {
+    super(element_id);
     this.name = name;
     this.action_type = action_type;
   }

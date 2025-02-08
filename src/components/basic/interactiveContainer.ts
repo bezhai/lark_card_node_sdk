@@ -1,18 +1,16 @@
 import { Behavior } from "../../common/behavior";
 import { Color } from "../../common/color";
-import { CornerRadiusType } from "../../common/style";
+import { CornerRadiusType, PxValue } from "../../common/style";
 import { PlainText } from "../../common/text";
+import { BaseComponent } from "./basic";
 import { InteractiveElement } from "./element";
 
 // 定义可枚举的类型
 type BackgroundStyle = "default" | "laser" | Color;
 type WidthType = "fill" | "auto" | `${number}px`; // 支持具体数值如 "20px", 范围是[16,999]
 type HeightType = "auto" | `${number}px`; // 支持具体数值如 "100px", 范围是[10,999]
-type PaddingType =
-  | `${number}px`
-  | `${number}px ${number}px ${number}px ${number}px`; // 交互容器的内边距。值的取值范围为 [0,28]px。支持填写单值或多值：单值：如 "10px"，表示容器内四个内边距都为 10px; 多值：如 "4px 12px 4px 12px"，表示容器内上、右、下、左的内边距分别为 4px，12px，4px，12px。四个值必填，使用空格间隔
 
-export class InteractiveContainerComponent {
+export class InteractiveContainerComponent extends BaseComponent {
   tag: "interactive_container" = "interactive_container";
   width?: WidthType; // 交互容器的宽度
   height?: HeightType; // 交互容器的高度
@@ -20,12 +18,13 @@ export class InteractiveContainerComponent {
   has_border?: boolean; // 是否展示边框，粗细固定为 1px
   border_color?: Color; // 边框的颜色，仅 has_border 为 true 时，此字段生效
   corner_radius?: string; // 圆角大小
-  padding?: PaddingType; // 内边距
+  padding?: PxValue; // 内边距
   behaviors: Behavior[] = []; // 行为配置数组
   hover_tips?: PlainText; // 悬浮提示信息
   disabled?: boolean; // 是否禁用交互容器，默认值为 false
   disabled_tips?: PlainText; // 禁用交互容器时的提示信息
   elements: InteractiveElement[] = []; // 内部的子元素
+  margin?: PxValue; // 外边距
 
 
   addElement(element: InteractiveElement) {
@@ -83,7 +82,7 @@ export class InteractiveContainerComponent {
     return this;
   }
 
-  setPadding(padding: PaddingType) {
+  setPadding(padding: PxValue) {
     this.padding = padding;
     return this;
   }
@@ -105,6 +104,11 @@ export class InteractiveContainerComponent {
 
   setDisabledTips(content: string) {
     this.disabled_tips = new PlainText(content);
+    return this;
+  }
+
+  setMargin(margin: PxValue) {
+    this.margin = margin;
     return this;
   }
 }

@@ -7,6 +7,7 @@ import {
   FlexMode,
   PxValue,
 } from "../../common/style";
+import { BaseComponent } from "./basic";
 import type { ColumnElement } from "./element";
 
 type Weight = 1 | 2 | 3 | 4 | 5;
@@ -23,7 +24,7 @@ export interface MultiUrlAction {
  * 列组件类
  * 用于在分栏组件中创建单个列，可以包含多个元素
  */
-export class Column {
+export class Column extends BaseComponent {
   readonly tag: "column" = "column";
   background_style?: TitleColor;
   width?: Width;
@@ -89,7 +90,7 @@ export class Column {
  * 分栏组件类
  * 用于创建多列布局，每列可以包含不同的元素
  */
-export class ColumnSet {
+export class ColumnSet extends BaseComponent {
   readonly tag: "column_set" = "column_set";
   horizontal_spacing?: HorizontalSpacing;
   horizontal_align?: HorizontalAlign;

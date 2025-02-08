@@ -1,5 +1,6 @@
 import type { Icon } from "../../common/icon";
 import { CommonText } from "../../common/text";
+import { BaseComponent, ValidIdentifier } from "./basic";
 
 export class DivText extends CommonText {
   lines?: number; // 内容最大显示行数，超出设置行的内容用... 省略。
@@ -10,12 +11,13 @@ export class DivText extends CommonText {
   }
 }
 
-export class DivComponent {
+export class DivComponent extends BaseComponent {
   tag: "div";
   text: DivText;
   icon?: Icon;
 
-  constructor(text: DivText) {
+  constructor(element_id: ValidIdentifier, text: DivText) {
+    super(element_id);
     this.tag = "div";
     this.text = text;
   }

@@ -1,7 +1,7 @@
-import type { Letter, Digit } from "../common/style";
-import type { CardElement } from "../components/basic/element";
+import { BaseClass } from "../../common/json";
+import { Letter, Digit } from "../../common/style";
 
-type ValidIdentifier = string & {
+export type ValidIdentifier = string & {
   match: `${Letter}${string extends infer T
     ? T extends `${Letter | Digit | "_"}${infer Rest}`
       ? Rest extends ""
@@ -59,36 +59,11 @@ type ValidIdentifier = string & {
  * };
  * ```
  */
-export interface ElementId {
+export class BaseComponent extends BaseClass {
   element_id: ValidIdentifier;
-}
 
-/**
- * @typedef {CardElement & ElementId} CardElementV2
- * @description 扩展的卡片元素类型，包含唯一标识符
- */
-export type CardElementV2 = CardElement & ElementId;
-
-/**
- * @function withElementId
- * @summary 为卡片元素添加唯一标识符
- * @description 创建一个新的卡片元素实例，继承原有属性并添加唯一标识符
- *
- * @param {CardElement} element - 原始卡片元素
- * @param {string} element_id - 要添加的唯一标识符
- * @returns {CardElementV2} 包含唯一标识符的新卡片元素
- *
- * @example
- * ```typescript
- * const originalElement = createCardElement();
- * const elementWithId = withElementId(originalElement, "button1");
- * ```
- */
-export function withElementId(
-  element: CardElement,
-  element_id: string
-): CardElementV2 {
-  return Object.assign(Object.create(Object.getPrototypeOf(element)), element, {
-    element_id,
-  });
+  constructor(element_id: ValidIdentifier) {
+    super();
+    this.element_id = element_id;
+  }
 }

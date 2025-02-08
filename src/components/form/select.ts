@@ -2,8 +2,9 @@ import type { WidthType } from "../../common/style";
 import { Behavior } from "../../common/behavior";
 import { PlainText } from "../../common/text";
 import { SelectOption } from "../../common/selectOption";
+import { BaseComponent } from "../basic/basic";
 
-export class SelectComponent {
+export class SelectComponent extends BaseComponent {
   tag: "select_static" = "select_static";
   type?: "default" | "text" = "default";
   name?: string;
@@ -18,8 +19,9 @@ export class SelectComponent {
   /**
    * @param name 表单容器的唯一标识。用于识别用户在交互后，提交的是哪个表单容器的数据。
    */
-  constructor(name?: string) {
+  setName(name: string) {
     this.name = name;
+    return this;
   }
 
   /**

@@ -2,9 +2,10 @@ import { Behavior } from "../../common/behavior";
 import { ConfirmTips } from "../../common/confirm";
 import { FourPxValue, SinglePxValue } from "../../common/style";
 import { CommonText, PlainText } from "../../common/text";
+import { BaseComponent } from "../basic/basic";
 import { ButtonComponent } from "./button";
 
-export class CheckboxComponent {
+export class CheckboxComponent extends BaseComponent {
   tag: "checkbox" = "checkbox";
   name?: string;
   checked?: boolean = false;

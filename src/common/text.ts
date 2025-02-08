@@ -1,16 +1,23 @@
 import { TitleColor } from "./color";
+import { BaseClass } from "./json";
 
 /**
  * @class Text
  * @description 基础文本类，支持普通文本和飞书 markdown 格式
  */
-class BasicText {
-  tag: "plain_text" | "lark_md";
-  content: string;
+class BasicText extends BaseClass {
+  protected tag: "plain_text" | "lark_md";
+  private content: string;
 
   constructor(tag: "plain_text" | "lark_md", content: string) {
+    super();
     this.tag = tag;
     this.content = content;
+  }
+
+  setContent(content: string) {
+    this.content = content;
+    return this;
   }
 }
 
@@ -20,7 +27,7 @@ class BasicText {
  * @description 纯文本类，特化的 Text 类，tag 固定为 "plain_text"
  */
 export class PlainText extends BasicText {
-  declare tag: "plain_text";
+  protected tag: "plain_text" = "plain_text";
 
   constructor(content: string) {
     super("plain_text", content);

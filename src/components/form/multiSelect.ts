@@ -1,8 +1,9 @@
 import type { WidthType } from "../../common/style";
 import { PlainText } from "../../common/text";
 import { SelectOption } from "../../common/selectOption";
+import { BaseComponent } from "../basic/basic";
 
-export class MultiSelectComponent {
+export class MultiSelectComponent extends BaseComponent {
   tag: "multi_select_static" = "multi_select_static";
   type?: "default" | "text" = "default";
   name?: string;
@@ -13,11 +14,13 @@ export class MultiSelectComponent {
   width?: WidthType = "default";
   options?: SelectOption[];
 
+
   /**
    * @param name 表单容器的唯一标识。用于识别用户在交互后，提交的是哪个表单容器的数据。
    */
-  constructor(name?: string) {
+  setName(name: string) {
     this.name = name;
+    return this;
   }
 
   /**

@@ -1,7 +1,8 @@
 import { Icon } from "../../common/icon";
 import { TextSize } from "../../common/text";
+import { BaseComponent, ValidIdentifier } from "./basic";
 
-export class MarkdownComponent {
+export class MarkdownComponent extends BaseComponent {
   tag: "markdown" = "markdown";
   text_size: TextSize = "normal";
   text_align: "left" | "center" | "right" = "left";
@@ -16,7 +17,8 @@ export class MarkdownComponent {
   };
   content: string;
 
-  constructor(content: string) {
+  constructor(element_id: ValidIdentifier, content: string) {
+    super(element_id);
     this.content = content;
   }
 

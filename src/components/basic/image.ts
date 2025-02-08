@@ -1,5 +1,6 @@
 import { CornerRadiusType } from "../../common/style";
 import { PlainText } from "../../common/text";
+import { BaseComponent, ValidIdentifier } from "./basic";
 
 type ScaleType = 
   | "crop_center" // 居中裁剪模式
@@ -15,7 +16,7 @@ type ImgSize =
   | "stretch_without_padding" // 通栏图，适用于高宽比小于 16:9 的图片，图片的宽度将撑满卡片宽度
   | `${number}px ${number}px`;
 
-export class ImgComponent {
+export class ImgComponent extends BaseComponent {
   tag: "img"; // 固定值 "img"
 
   img_key: string; // 图片的 Key，必填
@@ -47,14 +48,20 @@ export class ImgComponent {
 
   compact_width?: boolean; // 是否展示为紧凑型图片，选填
 
-  constructor(img_key: string, alt: string) {
+  constructor(element_id: ValidIdentifier, img_key: string) {
+    super(element_id);
     this.tag = "img";
-    this.alt = new PlainText(alt);
+    this.alt = new PlainText("");
     this.img_key = img_key;
   }
 
   setTitle(title: string) {
     this.title = new PlainText(title);
+    return this;
+  }
+
+  setAlt(alt: string) {
+    this.alt;
     return this;
   }
 
