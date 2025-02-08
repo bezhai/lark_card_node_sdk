@@ -17,3 +17,6 @@ generate-index.js
 .vscode/
 .idea/
 *.swp
+
+# 测试文件
+__tests__/

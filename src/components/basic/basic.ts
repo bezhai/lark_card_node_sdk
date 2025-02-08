@@ -1,42 +1,7 @@
 import { BaseClass } from "../../common/json";
-import { Letter, Digit } from "../../common/style";
 
-export type ValidIdentifier = string & {
-  match: `${Letter}${string extends infer T
-    ? T extends `${Letter | Digit | "_"}${infer Rest}`
-      ? Rest extends ""
-        ? true
-        : false
-      : false
-    : never}`;
-} & {
-  length: number extends infer L
-    ? L extends
-        | 0
-        | 1
-        | 2
-        | 3
-        | 4
-        | 5
-        | 6
-        | 7
-        | 8
-        | 9
-        | 10
-        | 11
-        | 12
-        | 13
-        | 14
-        | 15
-        | 16
-        | 17
-        | 18
-        | 19
-        | 20
-      ? L
-      : never
-    : never;
-};
+// 移除复杂的类型定义，改用简单的字符串类型
+export type ValidIdentifier = string;
 
 /**
  * @interface ElementId
@@ -64,6 +29,15 @@ export class BaseComponent extends BaseClass {
 
   constructor(element_id: ValidIdentifier) {
     super();
+    this.validateElementId(element_id);
     this.element_id = element_id;
+  }
+
+  private validateElementId(id: string): void {
+    if (!id.match(/^[a-zA-Z][a-zA-Z0-9_]{0,19}$/)) {
+      throw new Error(
+        "元素ID必须以字母开头，只能包含字母、数字和下划线，长度不超过20个字符"
+      );
+    }
   }
 }
