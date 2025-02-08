@@ -1,14 +1,12 @@
 import { Color } from "../../common/color";
 import { Icon } from "../../common/icon";
-import { PxValue } from "../../common/style";
+import { HorizontalAlign, HorizontalSpacing, PxValue } from "../../common/style";
 import { CardElement } from "./element";
 
 type HeaderTitleType = "plain_text" | "markdown";
 type IconPosition = "left" | "right" | "follow_text";
 type Direction = "vertical" | "horizontal";
 type VerticalAlign = "top" | "center" | "bottom";
-type HorizontalAlign = "left" | "center" | "right";
-type HorizontalSpacingType = "small" | "medium" | "large" | "extra_large" | `${number}px`;
 type IconExpandedAngleType = -180 | -90 | 90 | 180;
 type HeaderWidthType = "auto_when_fold" | "auto" | "fill";
 
@@ -78,7 +76,7 @@ export class CollapsiblePanelComponent {
   tag: "collapsible_panel" = "collapsible_panel";
   direction?: Direction = "vertical";
   vertical_spacing?: string;
-  horizontal_spacing?: HorizontalSpacingType;
+  horizontal_spacing?: HorizontalSpacing;
   vertical_align?: VerticalAlign = "top";
   horizontal_align?: HorizontalAlign = "left";
   padding?: PxValue;
@@ -106,7 +104,7 @@ export class CollapsiblePanelComponent {
     return this;
   }
 
-  setHorizontalSpacing(spacing: HorizontalSpacingType) {
+  setHorizontalSpacing(spacing: HorizontalSpacing) {
     this.horizontal_spacing = spacing;
     return this;
   }

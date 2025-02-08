@@ -35,3 +35,18 @@ export type PxValue =
 // 定义基础字符集
 export type Letter = 'a'|'b'|'c'|'d'|'e'|'f'|'g'|'h'|'i'|'j'|'k'|'l'|'m'|'n'|'o'|'p'|'q'|'r'|'s'|'t'|'u'|'v'|'w'|'x'|'y'|'z'|'A'|'B'|'C'|'D'|'E'|'F'|'G'|'H'|'I'|'J'|'K'|'L'|'M'|'N'|'O'|'P'|'Q'|'R'|'S'|'T'|'U'|'V'|'W'|'X'|'Y'|'Z';
 export type Digit = '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9';
+
+
+export type HorizontalAlign = 'left' | 'center' | 'right';
+
+// 水平间距类型
+export type HorizontalSpacing = 'default' | 'small' | 'large' | 'extra_large' | `${number}px`;
+
+// 自适应模式
+export type FlexMode = 'none' | 'flow' | 'bisect';
+
+// 垂直对齐方式
+export type VerticalAlign = 'top' | 'center' | 'bottom';
+
+// 宽度设置
+export type Width = 'auto' | 'weighted' | `${number}px`;
