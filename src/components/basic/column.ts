@@ -1,11 +1,22 @@
 import type { ColumnElement } from "./element";
 
-export type HorizontalSpacing = 'default' | 'small' | 'large'; // 水平间距类型
-export type HorizontalAlign = 'left' | 'center' | 'right'; // 水平对齐方式
-export type FlexMode = 'none' | 'flow' | 'bisect'; // 自适应模式
-export type BackgroundStyle = 'default' | 'grey' | 'white'; // 背景样式 
-export type VerticalAlign = 'top' | 'center' | 'bottom'; // 垂直对齐方式
-export type Width = 'auto' | 'weighted' | string; // 宽度设置
+// 水平间距类型
+export type HorizontalSpacing = 'default' | 'small' | 'large';
+
+// 水平对齐方式
+export type HorizontalAlign = 'left' | 'center' | 'right';
+
+// 自适应模式
+export type FlexMode = 'none' | 'flow' | 'bisect';
+
+// 背景样式
+export type BackgroundStyle = 'default' | 'grey' | 'white';
+
+// 垂直对齐方式
+export type VerticalAlign = 'top' | 'center' | 'bottom';
+
+// 宽度设置
+export type Width = 'auto' | 'weighted' | string;
 
 // 多端链接动作接口
 export interface MultiUrlAction {
@@ -15,30 +26,51 @@ export interface MultiUrlAction {
   android_url?: string; // 安卓端链接
 }
 
-// 列组件类
+/**
+ * 列组件类
+ * 用于在分栏组件中创建单个列，可以包含多个元素
+ */
 export class Column {
-  private tag: string = 'column';
-  private background_style: BackgroundStyle = 'default'; // 背景样式
-  private width: Width = 'auto'; // 宽度
-  private weight: number = 1; // 权重(weighted模式下生效)
-  private vertical_align: VerticalAlign = 'center'; // 垂直对齐
-  private vertical_spacing: string = '4px'; // 垂直间距
-  private padding: string = '8px'; // 内边距
-  private action?: { multi_url: MultiUrlAction }; // 点击动作
-  private elements: ColumnElement[] = []; // 子元素列表
+  readonly tag: "column" = "column";
+  public background_style: BackgroundStyle = 'default';
+  public width: Width = 'auto';
+  public weight: number = 1;
+  public vertical_align: VerticalAlign = 'center';
+  public vertical_spacing: string = '4px';
+  public padding: string = '8px';
+  public action?: { multi_url: MultiUrlAction };
+  public elements: ColumnElement[] = [];
 
-  // 构造函数,支持部分配置
-  constructor(config: Partial<Column> = {}) {
+  /**
+   * 创建列组件
+   * @param config 可选的配置参数
+   */
+  constructor(config: Partial<{
+    background_style: BackgroundStyle;
+    width: Width;
+    weight: number;
+    vertical_align: VerticalAlign;
+    vertical_spacing: string;
+    padding: string;
+    elements: ColumnElement[];
+  }> = {}) {
     Object.assign(this, config);
   }
 
-  // 设置背景样式
+  /**
+   * 设置背景样式
+   * @param style 背景样式
+   */
   public setBackgroundStyle(style: BackgroundStyle): Column {
     this.background_style = style;
     return this;
   }
 
-  // 设置宽度和权重
+  /**
+   * 设置宽度和权重
+   * @param width 宽度
+   * @param weight 权重（仅在weighted模式下生效）
+   */
   public setWidth(width: Width, weight?: number): Column {
     this.width = width;
     if (width === 'weighted' && weight) {
@@ -47,25 +79,36 @@ export class Column {
     return this;
   }
 
-  // 设置垂直对齐方式
+  /**
+   * 设置垂直对齐方式
+   * @param align 对齐方式
+   */
   public setVerticalAlign(align: VerticalAlign): Column {
     this.vertical_align = align;
     return this;
   }
 
-  // 添加子元素
+  /**
+   * 添加子元素
+   * @param elements 要添加的元素
+   */
   public addElements(...elements: ColumnElement[]): Column {
     this.elements.push(...elements);
     return this;
   }
 
-  // 设置点击动作
+  /**
+   * 设置点击动作
+   * @param action 多端链接动作
+   */
   public setAction(action: MultiUrlAction): Column {
     this.action = { multi_url: action };
     return this;
   }
 
-  // 转换为JSON对象
+  /**
+   * 转换为JSON对象
+   */
   public toJSON() {
     return {
       tag: this.tag,
@@ -81,53 +124,68 @@ export class Column {
   }
 }
 
-// 分栏组件类
+/**
+ * 分栏组件类
+ * 用于创建多列布局，每列可以包含不同的元素
+ */
 export class ColumnSet {
-  private tag: string = 'column_set';
-  private horizontal_spacing: HorizontalSpacing = 'default'; // 水平间距
-  private horizontal_align: HorizontalAlign = 'left'; // 水平对齐
-  private margin: string = '0px'; // 外边距
-  private flex_mode: FlexMode = 'none'; // 自适应模式
-  private background_style: BackgroundStyle = 'default'; // 背景样式
-  private action?: { multi_url: MultiUrlAction }; // 点击动作
-  private columns: Column[] = []; // 列数组
+  readonly tag: "column_set" = "column_set";
+  public horizontal_spacing: HorizontalSpacing = 'default';
+  public horizontal_align: HorizontalAlign = 'left';
+  public margin: string = '0px';
+  public flex_mode: FlexMode = 'none';
+  public background_style: BackgroundStyle = 'default';
+  public action?: { multi_url: MultiUrlAction };
+  public columns: Column[] = [];
 
-  // 构造函数,支持部分配置
-  constructor(config: Partial<ColumnSet> = {}) {
-    Object.assign(this, config);
-  }
-
-  // 设置水平间距
+  /**
+   * 设置水平间距
+   * @param spacing 间距大小
+   */
   public setHorizontalSpacing(spacing: HorizontalSpacing): ColumnSet {
     this.horizontal_spacing = spacing;
     return this;
   }
 
-  // 设置水平对齐
+  /**
+   * 设置水平对齐
+   * @param align 对齐方式
+   */
   public setHorizontalAlign(align: HorizontalAlign): ColumnSet {
     this.horizontal_align = align;
     return this;
   }
 
-  // 设置自适应模式
+  /**
+   * 设置自适应模式
+   * @param mode 自适应模式
+   */
   public setFlexMode(mode: FlexMode): ColumnSet {
     this.flex_mode = mode;
     return this;
   }
 
-  // 添加列
+  /**
+   * 添加列
+   * @param column 要添加的列
+   */
   public addColumn(column: Column): ColumnSet {
     this.columns.push(column);
     return this;
   }
 
-  // 设置点击动作
+  /**
+   * 设置点击动作
+   * @param action 多端链接动作
+   */
   public setAction(action: MultiUrlAction): ColumnSet {
     this.action = { multi_url: action };
     return this;
   }
 
-  // 转换为JSON对象
+  /**
+   * 转换为JSON对象
+   */
   public toJSON() {
     return {
       tag: this.tag,
@@ -141,9 +199,11 @@ export class ColumnSet {
     };
   }
 
-  // 验证分栏配置是否合法
+  /**
+   * 验证分栏配置是否合法
+   * @throws {Error} 当配置不合法时抛出错误
+   */
   public validate(): boolean {
-    // 基础验证规则
     if (this.columns.length === 0) {
       throw new Error('分栏组件必须包含至少一列');
     }

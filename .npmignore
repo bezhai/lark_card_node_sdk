@@ -1,5 +1,19 @@
+# 源代码（只发布编译后的文件）
 src/
+
+# 开发依赖
 node_modules/
+
+# 开发和测试文件
+test/
+demo/
+jest.config.js
 .gitignore
 tsconfig.json
 package-lock.json
+generate-index.js
+
+# 编辑器文件
+.vscode/
+.idea/
+*.swp
