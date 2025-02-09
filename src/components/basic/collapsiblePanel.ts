@@ -6,7 +6,7 @@ import {
   PxValue,
 } from "../../common/style";
 import { BaseComponent, ValidIdentifier } from "./basic";
-import { CardElement, CollapsiblePanelElement } from "./element";
+import { CollapsiblePanelElement } from "./element";
 import { BaseClass } from "../../common/json";
 
 type HeaderTitleType = "plain_text" | "markdown";
@@ -16,7 +16,7 @@ type VerticalAlign = "top" | "center" | "bottom";
 type IconExpandedAngleType = -180 | -90 | 90 | 180;
 type HeaderWidthType = "auto_when_fold" | "auto" | "fill";
 
-export class CollapsiblePanelHeader extends BaseComponent {
+export class CollapsiblePanelHeader extends BaseClass {
   title: {
     tag: HeaderTitleType;
     content: string;
@@ -31,11 +31,10 @@ export class CollapsiblePanelHeader extends BaseComponent {
   icon_expanded_angle?: IconExpandedAngleType;
 
   constructor(
-    element_id: ValidIdentifier,
     title: string,
     titleType: HeaderTitleType = "plain_text"
   ) {
-    super(element_id);
+    super();
     this.title = {
       tag: titleType,
       content: title,
@@ -83,7 +82,7 @@ export class CollapsiblePanelHeader extends BaseComponent {
   }
 }
 
-export class CollapsiblePanelComponent extends BaseClass {
+export class CollapsiblePanelComponent extends BaseComponent {
   tag: "collapsible_panel" = "collapsible_panel";
   direction?: Direction = "vertical";
   vertical_spacing?: string;
@@ -101,8 +100,8 @@ export class CollapsiblePanelComponent extends BaseClass {
   };
   elements: CollapsiblePanelElement[] = [];
 
-  constructor(header: CollapsiblePanelHeader) {
-    super();
+  constructor(element_id: ValidIdentifier, header: CollapsiblePanelHeader) {
+    super(element_id);
     this.header = header;
   }
 
