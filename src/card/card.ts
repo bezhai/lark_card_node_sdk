@@ -97,6 +97,14 @@ export class LarkCard extends BaseClass {
     return this;
   }
 
+  getConfig(): Config | undefined {
+    return this.config;
+  }
+
+  getHeader(): CardHeader | undefined {
+    return this.header;
+  }
+
   // 获取 body 实例
   getBody(): Body {
     return this.body;
