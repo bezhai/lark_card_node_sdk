@@ -3,7 +3,6 @@ import { Color } from "../../common/color";
 import { CornerRadiusType, PxValue } from "../../common/style";
 import { PlainText } from "../../common/text";
 import { BaseElementContainer } from "./baseElementContainer";
-import { BaseComponent } from "./basic";
 import { InteractiveElement } from "./element";
 
 // 定义可枚举的类型
@@ -33,7 +32,7 @@ export class InteractiveContainerComponent extends BaseElementContainer<Interact
     pc_url?: string
   ) {
     const behavior: Behavior = {
-      tag: "open_url",
+      type: "open_url",
       default_url: default_url,
       android_url: android_url,
       ios_url: ios_url,
@@ -45,7 +44,7 @@ export class InteractiveContainerComponent extends BaseElementContainer<Interact
 
   addCallbackBehavior(value: string | Record<string, unknown>) {
     const behavior: Behavior = {
-      tag: "callback",
+      type: "callback",
       value: value,
     };
     this.behaviors.push(behavior);
