@@ -52,7 +52,7 @@ type ActionElement =
  * 所有可用组件类型的联合
  * 包含基础组件(CardElement)和交互组件(ActionElement)
  */
-type AllElementWithFormAndTable = CardElementExcludeFormAndTable | FormComponent;
+type AllElementWithFormAndTable = CardElementExcludeFormAndTable | ActionElement;
 
 /**
  * 分栏组件支持的元素类型
