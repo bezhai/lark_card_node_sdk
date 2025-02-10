@@ -94,7 +94,7 @@ export class ButtonComponent extends BaseComponent {
     pc_url?: string
   ) {
     const behavior: Behavior = {
-      tag: "open_url",
+      type: "open_url",
       default_url: default_url,
       android_url: android_url,
       ios_url: ios_url,
@@ -106,7 +106,7 @@ export class ButtonComponent extends BaseComponent {
 
   addCallbackBehavior(value: string | Record<string, unknown>) {
     const behavior: Behavior = {
-      tag: "callback",
+      type: "callback",
       value: value,
     };
     this.behaviors.push(behavior);
