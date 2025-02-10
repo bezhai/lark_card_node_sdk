@@ -2,7 +2,7 @@ import { TitleColor } from "../../common/color";
 import {
   Width,
   VerticalAlign,
-  HorizontalSpacing,
+  Spacing,
   HorizontalAlign,
   FlexMode,
   PxValue,
@@ -92,7 +92,7 @@ export class Column extends BaseComponent {
  */
 export class ColumnSet extends BaseComponent {
   readonly tag: "column_set" = "column_set";
-  horizontal_spacing?: HorizontalSpacing;
+  horizontal_spacing?: Spacing;
   horizontal_align?: HorizontalAlign;
   margin?: PxValue;
   flex_mode?: FlexMode;
@@ -104,7 +104,7 @@ export class ColumnSet extends BaseComponent {
    * 设置水平间距
    * @param spacing 间距大小
    */
-  public setHorizontalSpacing(spacing: HorizontalSpacing): ColumnSet {
+  public setHorizontalSpacing(spacing: Spacing): ColumnSet {
     this.horizontal_spacing = spacing;
     return this;
   }

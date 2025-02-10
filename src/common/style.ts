@@ -39,8 +39,8 @@ export type Digit = '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9';
 
 export type HorizontalAlign = 'left' | 'center' | 'right';
 
-// 水平间距类型
-export type HorizontalSpacing = 'default' | 'small' | 'large' | 'extra_large' | `${number}px`;
+// 间距类型
+export type Spacing = 'small' | 'medium' | 'large' | 'extra_large' | `${number}px`;
 
 // 自适应模式
 export type FlexMode = 'none' | 'flow' | 'bisect';

@@ -1,6 +1,6 @@
 import { Behavior } from "../../common/behavior";
 import { Color } from "../../common/color";
-import { CornerRadiusType, PxValue } from "../../common/style";
+import { CornerRadiusType, HorizontalAlign, PxValue, Spacing, VerticalAlign } from "../../common/style";
 import { PlainText } from "../../common/text";
 import { BaseElementContainer } from "./baseElementContainer";
 import { InteractiveElement } from "./element";
@@ -14,16 +14,21 @@ export class InteractiveContainerComponent extends BaseElementContainer<Interact
   tag: "interactive_container" = "interactive_container";
   width?: WidthType; // 交互容器的宽度
   height?: HeightType; // 交互容器的高度
+  margin?: PxValue; // 外边距
+  direction?: "horizontal" | "vertical"; // 方向
+  horizontal_spacing?: Spacing; // 水平间距
+  horizontal_align?: HorizontalAlign; // 水平对齐方式
+  vertical_spacing?: Spacing; // 垂直间距
+  vertical_align?: VerticalAlign; // 垂直对齐方式
   background_style?: BackgroundStyle; // 交互容器的背景色样式
   has_border?: boolean; // 是否展示边框，粗细固定为 1px
   border_color?: Color; // 边框的颜色，仅 has_border 为 true 时，此字段生效
-  corner_radius?: string; // 圆角大小
+  corner_radius?: CornerRadiusType; // 圆角大小
   padding?: PxValue; // 内边距
   behaviors: Behavior[] = []; // 行为配置数组
   hover_tips?: PlainText; // 悬浮提示信息
   disabled?: boolean; // 是否禁用交互容器，默认值为 false
   disabled_tips?: PlainText; // 禁用交互容器时的提示信息
-  margin?: PxValue; // 外边距
 
   addOpenUrlBehavior(
     default_url: string,
@@ -103,6 +108,31 @@ export class InteractiveContainerComponent extends BaseElementContainer<Interact
 
   setMargin(margin: PxValue) {
     this.margin = margin;
+    return this;
+  }
+
+  setDirection(direction: "horizontal" | "vertical") {
+    this.direction = direction;
+    return this;
+  }
+
+  setHorizontalSpacing(spacing: Spacing) {
+    this.horizontal_spacing = spacing;
+    return this;
+  }
+
+  setVerticalSpacing(spacing: Spacing) {
+    this.vertical_spacing = spacing;
+    return this;
+  }
+
+  setHorizontalAlign(align: HorizontalAlign) {
+    this.horizontal_align = align;
+    return this;
+  }
+
+  setVerticalAlign(align: VerticalAlign) {
+    this.vertical_align = align;
     return this;
   }
 }

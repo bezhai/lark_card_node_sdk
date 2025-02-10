@@ -2,8 +2,8 @@ import { Color } from "../../common/color";
 import { Icon } from "../../common/icon";
 import {
   HorizontalAlign,
-  HorizontalSpacing,
   PxValue,
+  Spacing,
 } from "../../common/style";
 import { BaseComponent, ValidIdentifier } from "./basic";
 import { CollapsiblePanelElement } from "./element";
@@ -87,7 +87,7 @@ export class CollapsiblePanelComponent extends BaseElementContainer<CollapsibleP
   tag: "collapsible_panel" = "collapsible_panel";
   direction?: Direction = "vertical";
   vertical_spacing?: string;
-  horizontal_spacing?: HorizontalSpacing;
+  horizontal_spacing?: Spacing;
   vertical_align?: VerticalAlign = "top";
   horizontal_align?: HorizontalAlign = "left";
   padding?: PxValue;
@@ -115,7 +115,7 @@ export class CollapsiblePanelComponent extends BaseElementContainer<CollapsibleP
     return this;
   }
 
-  setHorizontalSpacing(spacing: HorizontalSpacing) {
+  setHorizontalSpacing(spacing: Spacing) {
     this.horizontal_spacing = spacing;
     return this;
   }
