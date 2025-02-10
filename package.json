@@ -1,6 +1,6 @@
 {
   "name": "feishu-card",
-  "version": "1.0.0-beta.6",
+  "version": "1.0.0-beta.7",
   "description": "A collection of Feishu message card components for easy building",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
