@@ -1,4 +1,4 @@
-export class BaseClass {
+export abstract class BaseClass {
   toJSON() {
     return Object.fromEntries(
       Object.getOwnPropertyNames(this)

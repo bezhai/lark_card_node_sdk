@@ -8,6 +8,7 @@ import {
 import { BaseComponent, ValidIdentifier } from "./basic";
 import { CollapsiblePanelElement } from "./element";
 import { BaseClass } from "../../common/json";
+import { BaseElementContainer } from "./baseElementContainer";
 
 type HeaderTitleType = "plain_text" | "markdown";
 type IconPosition = "left" | "right" | "follow_text";
@@ -82,7 +83,7 @@ export class CollapsiblePanelHeader extends BaseClass {
   }
 }
 
-export class CollapsiblePanelComponent extends BaseComponent {
+export class CollapsiblePanelComponent extends BaseElementContainer<CollapsiblePanelElement> {
   tag: "collapsible_panel" = "collapsible_panel";
   direction?: Direction = "vertical";
   vertical_spacing?: string;
@@ -98,7 +99,6 @@ export class CollapsiblePanelComponent extends BaseComponent {
     color?: Color;
     corner_radius?: `${number}px`;
   };
-  elements: CollapsiblePanelElement[] = [];
 
   constructor(element_id: ValidIdentifier, header: CollapsiblePanelHeader) {
     super(element_id);
@@ -158,13 +158,4 @@ export class CollapsiblePanelComponent extends BaseComponent {
     return this;
   }
 
-  addElement(element: CollapsiblePanelElement) {
-    this.elements.push(element);
-    return this;
-  }
-
-  setElements(elements: CollapsiblePanelElement[]) {
-    this.elements = elements;
-    return this;
-  }
 }

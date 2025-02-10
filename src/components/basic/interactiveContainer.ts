@@ -2,6 +2,7 @@ import { Behavior } from "../../common/behavior";
 import { Color } from "../../common/color";
 import { CornerRadiusType, PxValue } from "../../common/style";
 import { PlainText } from "../../common/text";
+import { BaseElementContainer } from "./baseElementContainer";
 import { BaseComponent } from "./basic";
 import { InteractiveElement } from "./element";
 
@@ -10,7 +11,7 @@ type BackgroundStyle = "default" | "laser" | Color;
 type WidthType = "fill" | "auto" | `${number}px`; // 支持具体数值如 "20px", 范围是[16,999]
 type HeightType = "auto" | `${number}px`; // 支持具体数值如 "100px", 范围是[10,999]
 
-export class InteractiveContainerComponent extends BaseComponent {
+export class InteractiveContainerComponent extends BaseElementContainer<InteractiveElement> {
   tag: "interactive_container" = "interactive_container";
   width?: WidthType; // 交互容器的宽度
   height?: HeightType; // 交互容器的高度
@@ -23,13 +24,7 @@ export class InteractiveContainerComponent extends BaseComponent {
   hover_tips?: PlainText; // 悬浮提示信息
   disabled?: boolean; // 是否禁用交互容器，默认值为 false
   disabled_tips?: PlainText; // 禁用交互容器时的提示信息
-  elements: InteractiveElement[] = []; // 内部的子元素
   margin?: PxValue; // 外边距
-
-
-  addElement(element: InteractiveElement) {
-    this.elements.push(element);
-  }
 
   addOpenUrlBehavior(
     default_url: string,

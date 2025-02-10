@@ -3,7 +3,11 @@ import { Config } from "./config";
 import { CardElement } from "../components/basic/element";
 import { BaseClass } from "../common/json";
 
+/**
+ * 卡片主体
+ */
 class Body extends BaseClass {
+  // 这里没有去继承 BaseElementContainer 是因为 Body 本身没有 element_id 属性
   private elements: CardElement[];
   constructor() {
     super();

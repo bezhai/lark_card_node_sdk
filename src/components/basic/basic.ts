@@ -24,7 +24,7 @@ export type ValidIdentifier = string;
  * };
  * ```
  */
-export class BaseComponent extends BaseClass {
+export abstract class BaseComponent extends BaseClass {
   element_id: ValidIdentifier;
 
   constructor(element_id: ValidIdentifier) {
