@@ -1,4 +1,4 @@
-import { BaseClass } from "../../common/json";
+import { BaseClass } from '../../common/json';
 
 // 移除复杂的类型定义，改用简单的字符串类型
 export type ValidIdentifier = string;
@@ -35,9 +35,7 @@ export abstract class BaseComponent extends BaseClass {
 
   private validateElementId(id: string): void {
     if (!id.match(/^[a-zA-Z][a-zA-Z0-9_]{0,19}$/)) {
-      throw new Error(
-        "元素ID必须以字母开头，只能包含字母、数字和下划线，长度不超过20个字符"
-      );
+      throw new Error('元素ID必须以字母开头，只能包含字母、数字和下划线，长度不超过20个字符');
     }
   }
 }

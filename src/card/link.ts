@@ -1,4 +1,4 @@
-import { BaseClass } from "../common/json";
+import { BaseClass } from '../common/json';
 
 export class CardLink extends BaseClass {
   url?: string;

@@ -1,12 +1,12 @@
-import { TitleColor } from "../common/color";
-import { PlainText } from "../common/text";
-import { BaseClass } from "../common/json";
+import { TitleColor } from '../common/color';
+import { PlainText } from '../common/text';
+import { BaseClass } from '../common/json';
 
 // 定义 TextTag 接口
 export interface TextTag {
-  tag: "text_tag"; // 固定值 "text_tag"
+  tag: 'text_tag'; // 固定值 "text_tag"
   text: PlainText; // 标签内容
-  color: "neutral" | "blue" | "green" | "yellow" | "red"; // 标签颜色
+  color: 'neutral' | 'blue' | 'green' | 'yellow' | 'red'; // 标签颜色
 }
 
 // 定义 I18nTextTagList 接口

@@ -1,7 +1,7 @@
-import { ChartSpec } from "./chartSpec";
-import type { ChartSpecLegend } from "./chartSpec";
+import { ChartSpec } from './chartSpec';
+import type { ChartSpecLegend } from './chartSpec';
 
-type PieState = "hover" | "selected";
+type PieState = 'hover' | 'selected';
 
 interface PieChartStyle {
   outerRadius?: number;
@@ -30,9 +30,9 @@ export class PieChartSpec extends ChartSpec {
     valueField: string,
     categoryField: string,
     label?: { visible?: boolean },
-    legends?: ChartSpecLegend
+    legends?: ChartSpecLegend,
   ) {
-    super("pie", title, label, legends);
+    super('pie', title, label, legends);
     this.valueField = valueField;
     this.categoryField = categoryField;
   }

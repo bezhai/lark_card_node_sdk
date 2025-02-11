@@ -1,17 +1,12 @@
-import { ChartSpec } from "./chartSpec";  // Keep as non-type import since we extend from it
+import { ChartSpec } from './chartSpec'; // Keep as non-type import since we extend from it
 
 export class WordCloudChartSpec extends ChartSpec {
   nameField: string;
   valueField: string;
   seriesField: string;
 
-  constructor(
-    title: { text: string },
-    nameField: string,
-    valueField: string,
-    seriesField: string
-  ) {
-    super("wordCloud", title);
+  constructor(title: { text: string }, nameField: string, valueField: string, seriesField: string) {
+    super('wordCloud', title);
     this.nameField = nameField;
     this.valueField = valueField;
     this.seriesField = seriesField;

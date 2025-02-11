@@ -1,8 +1,8 @@
-import { PxValue } from "../../common/style";
-import { BaseComponent } from "./basic";
+import { PxValue } from '../../common/style';
+import { BaseComponent } from './basic';
 
 export class HrComponent extends BaseComponent {
-  tag: "hr" = "hr";
+  tag: 'hr' = 'hr';
   margin?: PxValue;
 
   setMargin(margin: PxValue) {

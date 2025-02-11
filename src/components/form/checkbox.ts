@@ -1,18 +1,18 @@
-import { Behavior } from "../../common/behavior";
-import { ConfirmTips } from "../../common/confirm";
-import { FourPxValue, SinglePxValue } from "../../common/style";
-import { CommonText, PlainText } from "../../common/text";
-import { BaseComponent } from "../basic/basic";
-import { ButtonComponent } from "./button";
+import { Behavior } from '../../common/behavior';
+import { ConfirmTips } from '../../common/confirm';
+import { FourPxValue, SinglePxValue } from '../../common/style';
+import { CommonText, PlainText } from '../../common/text';
+import { BaseComponent } from '../basic/basic';
+import { ButtonComponent } from './button';
 
 export class CheckboxComponent extends BaseComponent {
-  tag: "checkbox" = "checkbox";
+  tag: 'checkbox' = 'checkbox';
   name?: string;
   checked?: boolean = false;
   text?: CommonText;
   overall_checkable?: boolean = true;
   button_area: {
-    pc_display_rule?: "on_hover" | "always";
+    pc_display_rule?: 'on_hover' | 'always';
     button?: ButtonComponent[];
   } = {};
   checked_style: {
@@ -60,7 +60,7 @@ export class CheckboxComponent extends BaseComponent {
    * @param pc_display_rule 展示规则
    * @description 当 pc_display_rule 为 on_hover 时，勾选器右侧按钮区域仅在光标悬浮在勾选器上时展示
    */
-  setPcDisplayRule(pc_display_rule: "on_hover" | "always") {
+  setPcDisplayRule(pc_display_rule: 'on_hover' | 'always') {
     this.button_area.pc_display_rule = pc_display_rule;
     return this;
   }

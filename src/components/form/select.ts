@@ -1,18 +1,18 @@
-import type { WidthType } from "../../common/style";
-import { Behavior } from "../../common/behavior";
-import { PlainText } from "../../common/text";
-import { SelectOption } from "../../common/selectOption";
-import { BaseComponent } from "../basic/basic";
+import type { WidthType } from '../../common/style';
+import { Behavior } from '../../common/behavior';
+import { PlainText } from '../../common/text';
+import { SelectOption } from '../../common/selectOption';
+import { BaseComponent } from '../basic/basic';
 
 export class SelectComponent extends BaseComponent {
-  tag: "select_static" = "select_static";
-  type?: "default" | "text" = "default";
+  tag: 'select_static' = 'select_static';
+  type?: 'default' | 'text' = 'default';
   name?: string;
   required?: boolean = false;
   disabled?: boolean = false;
   initial_option?: string;
   placeholder?: PlainText;
-  width?: WidthType = "default";
+  width?: WidthType = 'default';
   behaviors: Behavior[] = [];
   options?: SelectOption[];
 
@@ -28,7 +28,7 @@ export class SelectComponent extends BaseComponent {
    * 设置选择器样式
    * @param type default: 带边框样式, text: 不带边框的纯文本样式
    */
-  setType(type: "default" | "text") {
+  setType(type: 'default' | 'text') {
     this.type = type;
     return this;
   }

@@ -1,4 +1,4 @@
-import { TitleColor } from "../../common/color";
+import { TitleColor } from '../../common/color';
 import {
   Width,
   VerticalAlign,
@@ -6,9 +6,9 @@ import {
   HorizontalAlign,
   FlexMode,
   PxValue,
-} from "../../common/style";
-import { BaseComponent } from "./basic";
-import type { ColumnElement } from "./element";
+} from '../../common/style';
+import { BaseComponent } from './basic';
+import type { ColumnElement } from './element';
 
 type Weight = 1 | 2 | 3 | 4 | 5;
 
@@ -25,7 +25,7 @@ export interface MultiUrlAction {
  * 用于在分栏组件中创建单个列，可以包含多个元素
  */
 export class Column extends BaseComponent {
-  readonly tag: "column" = "column";
+  readonly tag: 'column' = 'column';
   background_style?: TitleColor;
   width?: Width;
   weight?: Weight;
@@ -34,7 +34,6 @@ export class Column extends BaseComponent {
   padding?: string;
   action?: { multi_url: MultiUrlAction };
   elements: ColumnElement[] = [];
-
 
   /**
    * 设置背景样式
@@ -52,7 +51,7 @@ export class Column extends BaseComponent {
    */
   public setWidth(width: Width, weight?: Weight): Column {
     this.width = width;
-    if (width === "weighted" && weight) {
+    if (width === 'weighted' && weight) {
       this.weight = weight;
     }
     return this;
@@ -91,9 +90,10 @@ export class Column extends BaseComponent {
  * 用于创建多列布局，每列可以包含不同的元素
  */
 export class ColumnSet extends BaseComponent {
-  readonly tag: "column_set" = "column_set";
+  readonly tag: 'column_set' = 'column_set';
   horizontal_spacing?: Spacing;
   horizontal_align?: HorizontalAlign;
+  vertical_align?: VerticalAlign;
   margin?: PxValue;
   flex_mode?: FlexMode;
   background_style?: TitleColor;
@@ -144,7 +144,6 @@ export class ColumnSet extends BaseComponent {
     this.action = { multi_url: action };
     return this;
   }
-
 
   /**
    * 设置外边距

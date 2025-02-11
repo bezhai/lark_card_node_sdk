@@ -1,6 +1,6 @@
-import { Icon } from "./icon";
-import { PlainText } from "./text";
-import { BaseClass } from "./json";
+import { Icon } from './icon';
+import { PlainText } from './text';
+import { BaseClass } from './json';
 
 /**
  * 选项配置

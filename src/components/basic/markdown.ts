@@ -1,11 +1,11 @@
-import { Icon } from "../../common/icon";
-import { TextSize } from "../../common/text";
-import { BaseComponent, ValidIdentifier } from "./basic";
+import { Icon } from '../../common/icon';
+import { TextSize } from '../../common/text';
+import { BaseComponent, ValidIdentifier } from './basic';
 
 export class MarkdownComponent extends BaseComponent {
-  tag: "markdown" = "markdown";
-  text_size: TextSize = "normal";
-  text_align: "left" | "center" | "right" = "left";
+  tag: 'markdown' = 'markdown';
+  text_size: TextSize = 'normal';
+  text_align: 'left' | 'center' | 'right' = 'left';
   icon?: Icon;
   href?: {
     urlVal?: {
@@ -27,7 +27,7 @@ export class MarkdownComponent extends BaseComponent {
     return this;
   }
 
-  setTextAlign(text_align: "left" | "center" | "right") {
+  setTextAlign(text_align: 'left' | 'center' | 'right') {
     this.text_align = text_align;
     return this;
   }
@@ -37,7 +37,9 @@ export class MarkdownComponent extends BaseComponent {
     return this;
   }
 
-  setHref(href: { urlVal: { url: string; pc_url?: string; ios_url?: string; android_url?: string } }) {
+  setHref(href: {
+    urlVal: { url: string; pc_url?: string; ios_url?: string; android_url?: string };
+  }) {
     this.href = href;
     return this;
   }

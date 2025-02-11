@@ -1,10 +1,10 @@
-import type { LegendOrient, LegendPosition } from "../../common/style";
-import { BaseClass } from "../../common/json";
+import type { LegendOrient, LegendPosition } from '../../common/style';
+import { BaseClass } from '../../common/json';
 
 export interface ChartSpecLegend {
   orient: LegendOrient;
   position: LegendPosition;
-  visible?: boolean;  
+  visible?: boolean;
 }
 
 export class ChartSpec extends BaseClass {
@@ -26,7 +26,7 @@ export class ChartSpec extends BaseClass {
     label?: {
       visible?: boolean;
     },
-    legends?: { orient: LegendOrient; position: LegendPosition; visible?: boolean }
+    legends?: { orient: LegendOrient; position: LegendPosition; visible?: boolean },
   ) {
     super();
     this.type = type;

@@ -1,5 +1,5 @@
-import { BaseClass } from "./json";
-import { PlainText } from "./text";
+import { BaseClass } from './json';
+import { PlainText } from './text';
 
 // 定义确认提示类型
 export class ConfirmTips extends BaseClass {

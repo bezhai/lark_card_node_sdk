@@ -1,7 +1,7 @@
-import type { CardHeader } from "./title";
-import { Config } from "./config";
-import { CardElement } from "../components/basic/element";
-import { BaseClass } from "../common/json";
+import type { CardHeader } from './title';
+import { Config } from './config';
+import { CardElement } from '../components/basic/element';
+import { BaseClass } from '../common/json';
 
 /**
  * 卡片主体
@@ -76,17 +76,17 @@ class Body extends BaseClass {
     if (start < 0) {
       start = Math.max(0, this.elements.length + start);
     }
-    
+
     if (deleteCount === undefined) {
       deleteCount = this.elements.length - start;
     }
-    
+
     return this.elements.splice(start, deleteCount, ...items);
   }
 }
 
 export class LarkCard extends BaseClass {
-  private readonly schema: "2.0" = "2.0";
+  private readonly schema: '2.0' = '2.0';
   private config?: Config;
   private header?: CardHeader;
   private body: Body = new Body();

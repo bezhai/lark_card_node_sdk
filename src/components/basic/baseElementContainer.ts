@@ -1,4 +1,4 @@
-import { BaseComponent } from "./basic";
+import { BaseComponent } from './basic';
 
 export abstract class BaseElementContainer<T extends BaseComponent> extends BaseComponent {
   protected elements: T[] = [];
@@ -55,11 +55,11 @@ export abstract class BaseElementContainer<T extends BaseComponent> extends Base
     if (start < 0) {
       start = Math.max(0, this.elements.length + start);
     }
-    
+
     if (deleteCount === undefined) {
       deleteCount = this.elements.length - start;
     }
-    
+
     return this.elements.splice(start, deleteCount, ...items);
   }
-} 
+}

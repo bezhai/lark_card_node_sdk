@@ -1,21 +1,27 @@
-import { Behavior } from "../../common/behavior";
-import { Color } from "../../common/color";
-import { CornerRadiusType, HorizontalAlign, PxValue, Spacing, VerticalAlign } from "../../common/style";
-import { PlainText } from "../../common/text";
-import { BaseElementContainer } from "./baseElementContainer";
-import { InteractiveElement } from "./element";
+import { Behavior } from '../../common/behavior';
+import { Color } from '../../common/color';
+import {
+  CornerRadiusType,
+  HorizontalAlign,
+  PxValue,
+  Spacing,
+  VerticalAlign,
+} from '../../common/style';
+import { PlainText } from '../../common/text';
+import { BaseElementContainer } from './baseElementContainer';
+import { InteractiveElement } from './element';
 
 // 定义可枚举的类型
-type BackgroundStyle = "default" | "laser" | Color;
-type WidthType = "fill" | "auto" | `${number}px`; // 支持具体数值如 "20px", 范围是[16,999]
-type HeightType = "auto" | `${number}px`; // 支持具体数值如 "100px", 范围是[10,999]
+type BackgroundStyle = 'default' | 'laser' | Color;
+type WidthType = 'fill' | 'auto' | `${number}px`; // 支持具体数值如 "20px", 范围是[16,999]
+type HeightType = 'auto' | `${number}px`; // 支持具体数值如 "100px", 范围是[10,999]
 
 export class InteractiveContainerComponent extends BaseElementContainer<InteractiveElement> {
-  tag: "interactive_container" = "interactive_container";
+  tag: 'interactive_container' = 'interactive_container';
   width?: WidthType; // 交互容器的宽度
   height?: HeightType; // 交互容器的高度
   margin?: PxValue; // 外边距
-  direction?: "horizontal" | "vertical"; // 方向
+  direction?: 'horizontal' | 'vertical'; // 方向
   horizontal_spacing?: Spacing; // 水平间距
   horizontal_align?: HorizontalAlign; // 水平对齐方式
   vertical_spacing?: Spacing; // 垂直间距
@@ -30,14 +36,9 @@ export class InteractiveContainerComponent extends BaseElementContainer<Interact
   disabled?: boolean; // 是否禁用交互容器，默认值为 false
   disabled_tips?: PlainText; // 禁用交互容器时的提示信息
 
-  addOpenUrlBehavior(
-    default_url: string,
-    android_url?: string,
-    ios_url?: string,
-    pc_url?: string
-  ) {
+  addOpenUrlBehavior(default_url: string, android_url?: string, ios_url?: string, pc_url?: string) {
     const behavior: Behavior = {
-      type: "open_url",
+      type: 'open_url',
       default_url: default_url,
       android_url: android_url,
       ios_url: ios_url,
@@ -49,7 +50,7 @@ export class InteractiveContainerComponent extends BaseElementContainer<Interact
 
   addCallbackBehavior(value: string | Record<string, unknown>) {
     const behavior: Behavior = {
-      type: "callback",
+      type: 'callback',
       value: value,
     };
     this.behaviors.push(behavior);
@@ -111,7 +112,7 @@ export class InteractiveContainerComponent extends BaseElementContainer<Interact
     return this;
   }
 
-  setDirection(direction: "horizontal" | "vertical") {
+  setDirection(direction: 'horizontal' | 'vertical') {
     this.direction = direction;
     return this;
   }

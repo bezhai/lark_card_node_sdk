@@ -1,4 +1,4 @@
-import { BaseClass } from "../common/json";
+import { BaseClass } from '../common/json';
 
 export class Summary extends BaseClass {
   private content: string;
@@ -27,25 +27,19 @@ export class StreamConfig extends BaseClass {
     ios?: number;
     pc?: number;
   }; // 流式更新步长，单位：字符数
-  private print_strategy?: "fast" | "delay"; // 流式更新策略，枚举值，可取：fast/delay
-  withPrintStrategy(print_strategy: "fast" | "delay") {
+  private print_strategy?: 'fast' | 'delay'; // 流式更新策略，枚举值，可取：fast/delay
+  withPrintStrategy(print_strategy: 'fast' | 'delay') {
     this.print_strategy = print_strategy;
     return this;
   }
 
-  withPrintFrequency(
-    ms: number,
-    platform: "android" | "ios" | "pc" | "default" = "default"
-  ) {
+  withPrintFrequency(ms: number, platform: 'android' | 'ios' | 'pc' | 'default' = 'default') {
     this.print_frequency_ms = this.print_frequency_ms || {};
     this.print_frequency_ms[platform] = ms;
     return this;
   }
 
-  withPrintStep(
-    step: number,
-    platform: "android" | "ios" | "pc" | "default" = "default"
-  ) {
+  withPrintStep(step: number, platform: 'android' | 'ios' | 'pc' | 'default' = 'default') {
     this.print_step = this.print_step || {};
     this.print_step[platform] = step;
     return this;
@@ -66,7 +60,7 @@ export class Config {
   private summary?: Summary; // 卡片在流式更新时显示的摘要内容
   private update_multi?: boolean; // 控制卡片是否为共享卡片。开启共享卡片后，同一张卡片的更新内容会对所有收到这张卡片的用户展示。默认值 false
   private enable_forward?: boolean = true; // 是否支持转发卡片。默认值 true
-  private width_mode?: "wide" | "default" | "full" = "default"; // 卡片宽度，窄版："default"，宽版："wide"，全屏："full"
+  private width_mode?: 'wide' | 'default' | 'full' = 'default'; // 卡片宽度，窄版："default"，宽版："wide"，全屏："full"
   private enable_forward_interaction?: boolean = false; // 是否支持转发卡片的交互。默认值 false
   private style?: any; // 添加自定义字号和颜色 TODO: 待补充
 
@@ -91,7 +85,7 @@ export class Config {
     return this;
   }
 
-  withWidthMode(width_mode: "wide" | "default" | "full") {
+  withWidthMode(width_mode: 'wide' | 'default' | 'full') {
     this.width_mode = width_mode;
     return this;
   }
@@ -111,6 +105,6 @@ export class Config {
       width_mode: this.width_mode,
       enable_forward_interaction: this.enable_forward_interaction,
       style: this.style,
-    }
+    };
   }
 }

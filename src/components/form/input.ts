@@ -1,14 +1,14 @@
-import type { WidthType } from "../../common/style";
-import type { PlainText } from "../../common/text";
-import { BaseComponent } from "../basic/basic";
+import type { WidthType } from '../../common/style';
+import type { PlainText } from '../../common/text';
+import { BaseComponent } from '../basic/basic';
 
 type InputType =
-  | "text" // 普通文本
-  | "multiline_text" // 多行文本
-  | "password" // 密码
+  | 'text' // 普通文本
+  | 'multiline_text' // 多行文本
+  | 'password'; // 密码
 
 export class InputComponent extends BaseComponent {
-  tag: "input" = "input";
+  tag: 'input' = 'input';
   name?: string; // 表单容器的唯一标识。用于识别用户在交互后，提交的是哪个表单容器的数据。
   placeholder?: PlainText; // 占位符，无输入时展示
   max_length?: number; // 最大输入长度
@@ -20,7 +20,7 @@ export class InputComponent extends BaseComponent {
   auto_resize?: boolean; // 多行文本是否自动撑高
   max_rows?: number; // 多行文本最大行数
   label?: PlainText; // 标签内容
-  label_position?: "top" | "left"; // 标签位置，默认 top
+  label_position?: 'top' | 'left'; // 标签位置，默认 top
   required?: boolean; // 是否必填，默认值为 false
   disabled?: boolean; // 是否禁用，默认值为 false
   value?: string | Record<string, unknown>; // 输入框携带的业务信息
@@ -75,7 +75,7 @@ export class InputComponent extends BaseComponent {
     return this;
   }
 
-  setLabelPosition(label_position: "top" | "left") {
+  setLabelPosition(label_position: 'top' | 'left') {
     this.label_position = label_position;
     return this;
   }

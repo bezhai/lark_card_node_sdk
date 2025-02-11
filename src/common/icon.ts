@@ -1,7 +1,7 @@
-import { BaseClass } from "./json";
+import { BaseClass } from './json';
 
 export class StandardIcon extends BaseClass {
-  private readonly tag: "standard_icon" = "standard_icon";
+  private readonly tag: 'standard_icon' = 'standard_icon';
   private token: string;
   private color: string;
   constructor(token: string, color: string) {
@@ -12,7 +12,7 @@ export class StandardIcon extends BaseClass {
 }
 
 export class CustomIcon extends BaseClass {
-  private readonly tag: "custom_icon" = "custom_icon";
+  private readonly tag: 'custom_icon' = 'custom_icon';
   private img_key: string;
   constructor(img_key: string) {
     super();
