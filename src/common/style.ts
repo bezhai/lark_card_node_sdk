@@ -98,3 +98,6 @@ export type VerticalAlign = 'top' | 'center' | 'bottom';
 
 // 宽度设置
 export type Width = 'auto' | 'weighted' | `${number}px`;
+
+// 方向
+export type Direction = 'vertical' | 'horizontal';

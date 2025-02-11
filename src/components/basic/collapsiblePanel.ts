@@ -1,14 +1,13 @@
 import { Color } from '../../common/color';
 import { Icon } from '../../common/icon';
-import { HorizontalAlign, PxValue, Spacing } from '../../common/style';
-import { BaseComponent, ValidIdentifier } from './basic';
+import { Direction, HorizontalAlign, PxValue, Spacing } from '../../common/style';
+import { ValidIdentifier } from './basic';
 import { CollapsiblePanelElement } from './element';
 import { BaseClass } from '../../common/json';
 import { BaseElementContainer } from './baseElementContainer';
 
 type HeaderTitleType = 'plain_text' | 'markdown';
 type IconPosition = 'left' | 'right' | 'follow_text';
-type Direction = 'vertical' | 'horizontal';
 type VerticalAlign = 'top' | 'center' | 'bottom';
 type IconExpandedAngleType = -180 | -90 | 90 | 180;
 type HeaderWidthType = 'auto_when_fold' | 'auto' | 'fill';
