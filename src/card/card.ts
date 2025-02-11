@@ -132,4 +132,46 @@ export class LarkCard extends BaseClass {
     this.body.clear();
     return this;
   }
+
+  toV1(): LarkCardV1 {
+    const v1 = new LarkCardV1();
+    if (this.config) {
+        v1.withConfig(this.config);
+    }
+    if (this.header) {
+        v1.withHeader(this.header);
+    }
+    v1.addElement(...this.getElements());
+    return v1;
+  }
+}
+
+/**
+ * 旧版本卡片, 仅作为兼容性支持, 组装V2卡片后可以调用 toV1 方法转换为V1卡片
+ */
+class LarkCardV1 extends BaseClass {
+  private readonly schema: '1.0' = '1.0';
+  private config?: Config;
+  private header?: CardHeader;
+  private elements: CardElement[] = [];
+
+  withConfig(config: Config): this {
+    this.config = config;
+    return this;
+  }
+
+  withHeader(header: CardHeader): this {
+    this.header = header;
+    return this;
+  }
+
+  addElement(...elements: CardElement[]): this {
+    this.elements.push(...elements);
+    return this;
+  }
+
+  getElements(): CardElement[] {
+    return this.elements;
+  }
+  
 }
