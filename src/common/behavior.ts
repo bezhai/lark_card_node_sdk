@@ -1,4 +1,4 @@
-export type Behavior = OpenUrlBehavior | CallbackBehavior;
+export const UNSUPPORTED_ACTION = 'lark://msgcard/unsupported_action';
 
 /**
  * 跳转链接交互
@@ -18,3 +18,5 @@ interface CallbackBehavior {
   type: 'callback';
   value: string | Record<string, unknown>; // 回传交互数据
 }
+
+export type Behavior = OpenUrlBehavior | CallbackBehavior;
