@@ -15,6 +15,7 @@ import type { InteractiveContainerComponent } from './interactiveContainer';
 import type { MarkdownComponent } from './markdown';
 import { CheckboxComponent } from '../form/checkbox';
 import { MultiSelectComponent } from '../form/multiSelect';
+import { BarChartSpec } from '../chart/bar';
 
 /**
  * 卡片基础组件类型，除了表单组件
@@ -26,7 +27,7 @@ type CardElementExcludeFormAndTable =
   | HrComponent
   | InteractiveContainerComponent
   | MarkdownComponent
-  | ChartElement<PieChartSpec | WordCloudChartSpec | LineChartSpec>
+  | ChartElement<PieChartSpec | WordCloudChartSpec | LineChartSpec | BarChartSpec>
   | ColumnSet
   | DivComponent
   | HrComponent

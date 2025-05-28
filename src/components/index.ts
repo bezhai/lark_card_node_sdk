@@ -21,5 +21,6 @@ export * from './form/select';
 export * from './chart/chart';
 export * from './chart/chartSpec';
 export * from './chart/line';
+export * from './chart/bar';
 export * from './chart/pie';
 export * from './chart/wordCloud';
