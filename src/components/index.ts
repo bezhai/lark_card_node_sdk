@@ -8,6 +8,7 @@ export * from './basic/hr';
 export * from './basic/image';
 export * from './basic/interactiveContainer';
 export * from './basic/markdown';
+export * from './basic/table';
 
 // Form components
 export * from './form/button';

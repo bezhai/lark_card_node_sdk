@@ -16,6 +16,7 @@ import type { MarkdownComponent } from './markdown';
 import { CheckboxComponent } from '../form/checkbox';
 import { MultiSelectComponent } from '../form/multiSelect';
 import { BarChartSpec } from '../chart/bar';
+import { TableComponent } from './table';
 
 /**
  * 卡片基础组件类型，除了表单组件
@@ -33,8 +34,7 @@ type CardElementExcludeFormAndTable =
   | HrComponent
   | MarkdownComponent;
 
-// TODO: 增加表格组件
-export type CardElement = CardElementExcludeFormAndTable | FormComponent;
+export type CardElement = CardElementExcludeFormAndTable | FormComponent | TableComponent<any>;
 
 /**
  * 交互型组件类型
@@ -57,7 +57,7 @@ type AllElementWithFormAndTable = CardElementExcludeFormAndTable | ActionElement
 
 /**
  * 分栏组件支持的元素类型
- * 不支持表单组件和表格组件(未实现)
+ * 不支持表单组件和表格组件
  * 用于定义可以放置在分栏布局中的组件类型
  */
 export type ColumnElement = AllElementWithFormAndTable;
@@ -81,4 +81,4 @@ export type InteractiveElement = AllElementWithFormAndTable;
  * 支持大部分基础组件和交互组件
  * 仅不支持内嵌表单组件，以避免复杂的嵌套结构
  */
-export type CollapsiblePanelElement = AllElementWithFormAndTable; // TODO: 增加表格组件
+export type CollapsiblePanelElement = AllElementWithFormAndTable | TableComponent<any>;
