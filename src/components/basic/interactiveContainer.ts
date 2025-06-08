@@ -17,24 +17,24 @@ type WidthType = 'fill' | 'auto' | `${number}px`; // 支持具体数值如 "20px
 type HeightType = 'auto' | `${number}px`; // 支持具体数值如 "100px", 范围是[10,999]
 
 export class InteractiveContainerComponent extends BaseElementContainer<InteractiveElement> {
-  tag: 'interactive_container' = 'interactive_container';
-  width?: WidthType; // 交互容器的宽度
-  height?: HeightType; // 交互容器的高度
-  margin?: PxValue; // 外边距
-  direction?: 'horizontal' | 'vertical'; // 方向
-  horizontal_spacing?: Spacing; // 水平间距
-  horizontal_align?: HorizontalAlign; // 水平对齐方式
-  vertical_spacing?: Spacing; // 垂直间距
-  vertical_align?: VerticalAlign; // 垂直对齐方式
-  background_style?: BackgroundStyle; // 交互容器的背景色样式
-  has_border?: boolean; // 是否展示边框，粗细固定为 1px
-  border_color?: Color; // 边框的颜色，仅 has_border 为 true 时，此字段生效
-  corner_radius?: CornerRadiusType; // 圆角大小
-  padding?: PxValue; // 内边距
-  behaviors: Behavior[] = []; // 行为配置数组
-  hover_tips?: PlainText; // 悬浮提示信息
-  disabled?: boolean; // 是否禁用交互容器，默认值为 false
-  disabled_tips?: PlainText; // 禁用交互容器时的提示信息
+  private readonly tag: 'interactive_container' = 'interactive_container';
+  private width?: WidthType; // 交互容器的宽度
+  private height?: HeightType; // 交互容器的高度
+  private margin?: PxValue; // 外边距
+  private direction?: 'horizontal' | 'vertical'; // 方向
+  private horizontal_spacing?: Spacing; // 水平间距
+  private horizontal_align?: HorizontalAlign; // 水平对齐方式
+  private vertical_spacing?: Spacing; // 垂直间距
+  private vertical_align?: VerticalAlign; // 垂直对齐方式
+  private background_style?: BackgroundStyle; // 交互容器的背景色样式
+  private has_border?: boolean; // 是否展示边框，粗细固定为 1px
+  private border_color?: Color; // 边框的颜色，仅 has_border 为 true 时，此字段生效
+  private corner_radius?: CornerRadiusType; // 圆角大小
+  private padding?: PxValue; // 内边距
+  private behaviors: Behavior[] = []; // 行为配置数组
+  private hover_tips?: PlainText; // 悬浮提示信息
+  private disabled?: boolean = false; // 是否禁用交互容器，默认值为 false
+  private disabled_tips?: PlainText; // 禁用交互容器时的提示信息
 
   addOpenUrlBehavior(default_url: string, android_url?: string, ios_url?: string, pc_url?: string) {
     const behavior: Behavior = {

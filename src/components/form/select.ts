@@ -5,16 +5,16 @@ import { SelectOption } from '../../common/selectOption';
 import { BaseComponent } from '../basic/basic';
 
 export class SelectComponent extends BaseComponent {
-  tag: 'select_static' = 'select_static';
-  type?: 'default' | 'text' = 'default';
-  name?: string;
-  required?: boolean = false;
-  disabled?: boolean = false;
-  initial_option?: string;
-  placeholder?: PlainText;
-  width?: WidthType = 'default';
-  behaviors: Behavior[] = [];
-  options?: SelectOption[];
+  private readonly tag: 'select_static' = 'select_static';
+  private type?: 'default' | 'text' = 'default';
+  private name?: string;
+  private required?: boolean = false;
+  private disabled?: boolean = false;
+  private initial_option?: string;
+  private placeholder?: PlainText;
+  private width?: WidthType = 'default';
+  private behaviors: Behavior[] = [];
+  private options?: SelectOption[];
 
   /**
    * @param name 表单容器的唯一标识。用于识别用户在交互后，提交的是哪个表单容器的数据。

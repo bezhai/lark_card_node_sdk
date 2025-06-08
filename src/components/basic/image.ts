@@ -1,6 +1,6 @@
 import { CornerRadiusType } from '../../common/style';
 import { PlainText } from '../../common/text';
-import { BaseComponent, ValidIdentifier } from './basic';
+import { BaseComponent } from './basic';
 
 type ScaleType =
   | 'crop_center' // 居中裁剪模式
@@ -17,33 +17,33 @@ type ImgSize =
   | `${number}px ${number}px`;
 
 export class ImgComponent extends BaseComponent {
-  tag: 'img'; // 固定值 "img"
+  private readonly tag: 'img'; // 固定值 "img"
 
-  img_key: string; // 图片的 Key，必填
+  private img_key: string; // 图片的 Key，必填
 
-  alt: PlainText; // 悬浮说明，必填
+  private alt: PlainText; // 悬浮说明，必填
 
-  title?: PlainText; // 图片标题，选填
+  private title?: PlainText; // 图片标题，选填
 
-  corner_radius?: CornerRadiusType; // 图片的圆角半径
+  private corner_radius?: CornerRadiusType; // 图片的圆角半径
 
-  scale_type?: ScaleType; // 图片的裁剪模式，选填，默认为 crop_center
+  private scale_type?: ScaleType; // 图片的裁剪模式，选填，默认为 crop_center
 
-  size?: ImgSize; // 图片尺寸，选填，仅在 scale_type 为 crop_center 或 crop_top 时生效
+  private size?: ImgSize; // 图片尺寸，选填，仅在 scale_type 为 crop_center 或 crop_top 时生效
 
-  transparent?: boolean; // 是否为透明底色，选填，默认值为 false
+  private transparent?: boolean; // 是否为透明底色，选填，默认值为 false
 
-  preview?: boolean; // 点击后是否放大图片，选填，默认值为 true
+  private preview?: boolean; // 点击后是否放大图片，选填，默认值为 true
 
   // 历史属性
-  mode?: 'large' | 'medium' | 'small' | 'tiny' | 'stretch' | 'stretch_without_padding'; // 图片尺寸模式，历史属性，选填
+  private mode?: 'large' | 'medium' | 'small' | 'tiny' | 'stretch' | 'stretch_without_padding'; // 图片尺寸模式，历史属性，选填
 
-  custom_width?: number; // 自定义图片的最大展示宽度，选填
+  private custom_width?: number; // 自定义图片的最大展示宽度，选填
 
-  compact_width?: boolean; // 是否展示为紧凑型图片，选填
+  private compact_width?: boolean; // 是否展示为紧凑型图片，选填
 
-  constructor(element_id: ValidIdentifier, img_key: string) {
-    super(element_id);
+  constructor(img_key: string) {
+    super();
     this.tag = 'img';
     this.alt = new PlainText('');
     this.img_key = img_key;

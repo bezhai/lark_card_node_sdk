@@ -4,15 +4,15 @@ import { SelectOption } from '../../common/selectOption';
 import { BaseComponent } from '../basic/basic';
 
 export class MultiSelectComponent extends BaseComponent {
-  tag: 'multi_select_static' = 'multi_select_static';
-  type?: 'default' | 'text' = 'default';
-  name?: string;
-  required?: boolean = false;
-  disabled?: boolean = false;
-  selected_values?: string[];
-  placeholder?: PlainText;
-  width?: WidthType = 'default';
-  options?: SelectOption[];
+  private readonly tag: 'multi_select_static' = 'multi_select_static';
+  private type?: 'default' | 'text' = 'default';
+  private name?: string;
+  private required?: boolean = false;
+  private disabled?: boolean = false;
+  private selected_values?: string[];
+  private placeholder?: PlainText;
+  private width?: WidthType = 'default';
+  private options?: SelectOption[];
 
   /**
    * @param name 表单容器的唯一标识。用于识别用户在交互后，提交的是哪个表单容器的数据。

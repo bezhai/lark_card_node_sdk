@@ -1,7 +1,6 @@
 import { Color } from '../../common/color';
 import { Icon } from '../../common/icon';
 import { Direction, HorizontalAlign, PxValue, Spacing } from '../../common/style';
-import { ValidIdentifier } from './basic';
 import { CollapsiblePanelElement } from './element';
 import { BaseClass } from '../../common/json';
 import { BaseElementContainer } from './baseElementContainer';
@@ -13,18 +12,18 @@ type IconExpandedAngleType = -180 | -90 | 90 | 180;
 type HeaderWidthType = 'auto_when_fold' | 'auto' | 'fill';
 
 export class CollapsiblePanelHeader extends BaseClass {
-  title: {
+  private title: {
     tag: HeaderTitleType;
     content: string;
   };
-  background_color?: Color;
-  vertical_align?: VerticalAlign;
-  padding?: PxValue;
-  position?: 'top' | 'bottom';
-  width?: HeaderWidthType;
-  icon?: Icon;
-  icon_position?: IconPosition;
-  icon_expanded_angle?: IconExpandedAngleType;
+  private background_color?: Color;
+  private vertical_align?: VerticalAlign;
+  private padding?: PxValue;
+  private position?: 'top' | 'bottom';
+  private width?: HeaderWidthType;
+  private icon?: Icon;
+  private icon_position?: IconPosition;
+  private icon_expanded_angle?: IconExpandedAngleType;
 
   constructor(title: string, titleType: HeaderTitleType = 'plain_text') {
     super();
@@ -92,8 +91,8 @@ export class CollapsiblePanelComponent extends BaseElementContainer<CollapsibleP
     corner_radius?: `${number}px`;
   };
 
-  constructor(element_id: ValidIdentifier, header: CollapsiblePanelHeader) {
-    super(element_id);
+  constructor(header: CollapsiblePanelHeader) {
+    super();
     this.header = header;
   }
 

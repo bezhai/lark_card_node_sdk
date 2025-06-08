@@ -3,10 +3,10 @@ import { ChartSpec } from './chartSpec';
 import type { ChartSpecLegend } from './chartSpec';
 
 export class LineChartSpec extends ChartSpec {
-  xField: string;
-  yField: string;
-  seriesField?: string;
-  line?: {
+  private xField: string;
+  private yField: string;
+  private seriesField?: string;
+  private line?: {
     style?: {
       curveType?: LineCurveType;
     };

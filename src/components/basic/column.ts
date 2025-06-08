@@ -25,15 +25,15 @@ export interface MultiUrlAction {
  * 用于在分栏组件中创建单个列，可以包含多个元素
  */
 export class Column extends BaseComponent {
-  readonly tag: 'column' = 'column';
-  background_style?: TitleColor;
-  width?: Width;
-  weight?: Weight;
-  vertical_align?: VerticalAlign;
-  vertical_spacing?: string;
-  padding?: string;
-  action?: { multi_url: MultiUrlAction };
-  elements: ColumnElement[] = [];
+  private readonly tag: 'column' = 'column';
+  private background_style?: TitleColor;
+  private width?: Width;
+  private weight?: Weight;
+  private vertical_align?: VerticalAlign;
+  private vertical_spacing?: string;
+  private padding?: string;
+  private action?: { multi_url: MultiUrlAction };
+  private elements: ColumnElement[] = [];
 
   /**
    * 设置背景样式
@@ -90,15 +90,15 @@ export class Column extends BaseComponent {
  * 用于创建多列布局，每列可以包含不同的元素
  */
 export class ColumnSet extends BaseComponent {
-  readonly tag: 'column_set' = 'column_set';
-  horizontal_spacing?: Spacing;
-  horizontal_align?: HorizontalAlign;
-  vertical_align?: VerticalAlign;
-  margin?: PxValue;
-  flex_mode?: FlexMode;
-  background_style?: TitleColor;
-  action?: { multi_url: MultiUrlAction };
-  columns: Column[] = [];
+  private readonly tag: 'column_set' = 'column_set';
+  private horizontal_spacing?: Spacing;
+  private horizontal_align?: HorizontalAlign;
+  private vertical_align?: VerticalAlign;
+  private margin?: PxValue;
+  private flex_mode?: FlexMode;
+  private background_style?: TitleColor;
+  private action?: { multi_url: MultiUrlAction };
+  private columns: Column[] = [];
 
   /**
    * 设置水平间距

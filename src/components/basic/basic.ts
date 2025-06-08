@@ -25,12 +25,16 @@ export type ValidIdentifier = string;
  * ```
  */
 export abstract class BaseComponent extends BaseClass {
-  element_id: ValidIdentifier;
+  private element_id?: ValidIdentifier;
 
-  constructor(element_id: ValidIdentifier) {
+  constructor() {
     super();
+  }
+
+  setElementId(element_id: ValidIdentifier) {
     this.validateElementId(element_id);
     this.element_id = element_id;
+    return this;
   }
 
   private validateElementId(id: string): void {

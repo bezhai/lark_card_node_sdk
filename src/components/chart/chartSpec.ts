@@ -8,17 +8,17 @@ export interface ChartSpecLegend {
 }
 
 export class ChartSpec extends BaseClass {
-  type: string;
-  title: {
+  private type: string;
+  private title: {
     text: string;
   };
-  data: {
+  private data: {
     values: Array<{ [key: string]: any }>;
   };
-  label?: {
+  protected label?: {
     visible?: boolean;
   };
-  legends?: ChartSpecLegend;
+  protected legends?: ChartSpecLegend;
 
   constructor(
     type: string,

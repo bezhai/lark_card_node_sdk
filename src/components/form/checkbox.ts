@@ -6,26 +6,26 @@ import { BaseComponent } from '../basic/basic';
 import { ButtonComponent } from './button';
 
 export class CheckboxComponent extends BaseComponent {
-  tag: 'checkbox' = 'checkbox';
-  name?: string;
-  checked?: boolean = false;
-  text?: CommonText;
-  overall_checkable?: boolean = true;
-  button_area: {
+  private readonly tag: 'checkbox' = 'checkbox';
+  private name?: string;
+  private checked?: boolean = false;
+  private text?: CommonText;
+  private overall_checkable?: boolean = true;
+  private button_area: {
     pc_display_rule?: 'on_hover' | 'always';
     button?: ButtonComponent[];
   } = {};
-  checked_style: {
+  private checked_style: {
     show_strikethrough?: boolean;
     opacity?: number;
   } = {};
-  margin?: SinglePxValue | FourPxValue;
-  padding?: SinglePxValue | FourPxValue;
-  behaviors: Behavior[] = [];
-  hover_tips?: PlainText;
-  disabled?: boolean = false;
-  disabled_tips?: PlainText;
-  confirm?: ConfirmTips;
+  private margin?: SinglePxValue | FourPxValue;
+  private padding?: SinglePxValue | FourPxValue;
+  private behaviors: Behavior[] = [];
+  private hover_tips?: PlainText;
+  private disabled?: boolean = false;
+  private disabled_tips?: PlainText;
+  private confirm?: ConfirmTips;
 
   /**
    * 设置勾选器名称

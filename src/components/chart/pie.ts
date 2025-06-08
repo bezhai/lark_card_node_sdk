@@ -19,11 +19,11 @@ export interface PieChartCustomization {
 }
 
 export class PieChartSpec extends ChartSpec {
-  valueField: string;
-  categoryField: string;
-  pie?: PieChartCustomization;
-  outerRadius?: number;
-  innerRadius?: number;
+  private valueField: string;
+  private categoryField: string;
+  private pie?: PieChartCustomization;
+  private outerRadius?: number;
+  private innerRadius?: number;
 
   constructor(
     title: { text: string },

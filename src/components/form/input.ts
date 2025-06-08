@@ -8,22 +8,22 @@ type InputType =
   | 'password'; // 密码
 
 export class InputComponent extends BaseComponent {
-  tag: 'input' = 'input';
-  name?: string; // 表单容器的唯一标识。用于识别用户在交互后，提交的是哪个表单容器的数据。
-  placeholder?: PlainText; // 占位符，无输入时展示
-  max_length?: number; // 最大输入长度
-  default_value?: string; // 输入框的默认内容
-  width?: WidthType; // 输入框的宽度
-  input_type?: InputType; // 输入框的类型
-  show_icon?: boolean; // 当输入类型为密码类型时，是否展示前缀图标
-  rows?: number; // 多行文本的行数
-  auto_resize?: boolean; // 多行文本是否自动撑高
-  max_rows?: number; // 多行文本最大行数
-  label?: PlainText; // 标签内容
-  label_position?: 'top' | 'left'; // 标签位置，默认 top
-  required?: boolean; // 是否必填，默认值为 false
-  disabled?: boolean; // 是否禁用，默认值为 false
-  value?: string | Record<string, unknown>; // 输入框携带的业务信息
+  private readonly tag: 'input' = 'input';
+  private name?: string; // 表单容器的唯一标识。用于识别用户在交互后，提交的是哪个表单容器的数据。
+  private placeholder?: PlainText; // 占位符，无输入时展示
+  private max_length?: number; // 最大输入长度
+  private default_value?: string; // 输入框的默认内容
+  private width?: WidthType; // 输入框的宽度
+  private input_type?: InputType; // 输入框的类型
+  private show_icon?: boolean; // 当输入类型为密码类型时，是否展示前缀图标
+  private rows?: number; // 多行文本的行数
+  private auto_resize?: boolean; // 多行文本是否自动撑高
+  private max_rows?: number; // 多行文本最大行数
+  private label?: PlainText; // 标签内容
+  private label_position?: 'top' | 'left'; // 标签位置，默认 top
+  private required?: boolean; // 是否必填，默认值为 false
+  private disabled?: boolean; // 是否禁用，默认值为 false
+  private value?: string | Record<string, unknown>; // 输入框携带的业务信息
 
   setPlaceholder(placeholder: PlainText) {
     this.placeholder = placeholder;

@@ -7,7 +7,14 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@card/*": ["card/*"],
+      "@common/*": ["common/*"],
+      "@components/*": ["components/*"],
+      "@basic/*": ["components/basic/*"]
+    }
   },
   "include": ["src"],
   "exclude": [

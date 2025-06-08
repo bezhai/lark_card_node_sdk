@@ -3,7 +3,7 @@ import { ConfirmTips } from '../../common/confirm';
 import type { Icon } from '../../common/icon';
 import type { WidthType } from '../../common/style';
 import { PlainText } from '../../common/text';
-import { BaseComponent, ValidIdentifier } from '../basic/basic';
+import { BaseComponent } from '../basic/basic';
 
 // 定义按钮类型
 type ButtonType =
@@ -29,18 +29,18 @@ type ActionType =
   | 'form_reset'; // 将当前按钮与取消提交事件绑定。用户点击后，将触发表单容器的取消提交事件，重置所有表单组件的输入值为初始值
 
 export class ButtonComponent extends BaseComponent {
-  tag: 'button' = 'button'; // 固定为 "button"
-  type: ButtonType = 'default'; // 按钮类型，默认值为 "default"
-  size?: ButtonSize = 'medium'; // 按钮尺寸，默认值为 "medium"
-  width?: WidthType; // 按钮宽度
-  text?: PlainText; // 按钮文本内容
-  icon?: Icon; // 按钮图标
-  hover_tips?: PlainText; // 悬浮提示信息
-  disabled?: boolean = false; // 是否禁用按钮，默认值为 false
-  disabled_tips?: PlainText; // 按钮禁用时的提示信息
-  confirm?: ConfirmTips; // 按钮点击时的二次确认提示信息
-  behaviors: Behavior[] = []; // 行为配置数组
-  value?: Record<string, unknown>; // 历史配置, 按钮携带的业务信息
+  private readonly tag: 'button' = 'button'; // 固定为 "button"
+  private type: ButtonType = 'default'; // 按钮类型，默认值为 "default"
+  private size?: ButtonSize = 'medium'; // 按钮尺寸，默认值为 "medium"
+  private width?: WidthType; // 按钮宽度
+  private text?: PlainText; // 按钮文本内容
+  private icon?: Icon; // 按钮图标
+  private hover_tips?: PlainText; // 悬浮提示信息
+  private disabled?: boolean = false; // 是否禁用按钮，默认值为 false
+  private disabled_tips?: PlainText; // 按钮禁用时的提示信息
+  private confirm?: ConfirmTips; // 按钮点击时的二次确认提示信息
+  private behaviors: Behavior[] = []; // 行为配置数组
+  private value?: Record<string, unknown>; // 历史配置, 按钮携带的业务信息
 
   setType(type: ButtonType) {
     this.type = type;
@@ -119,8 +119,8 @@ export class TableButtonComponent extends ButtonComponent {
   required?: boolean; // 是否必填，默认值为 false
   action_type: ActionType; // 按钮的交互类型
 
-  constructor(element_id: ValidIdentifier, name: string, action_type: ActionType) {
-    super(element_id);
+  constructor(name: string, action_type: ActionType) {
+    super();
     this.name = name;
     this.action_type = action_type;
   }

@@ -1,13 +1,13 @@
 import { Icon } from '../../common/icon';
 import { TextSize } from '../../common/text';
-import { BaseComponent, ValidIdentifier } from './basic';
+import { BaseComponent } from './basic';
 
 export class MarkdownComponent extends BaseComponent {
-  tag: 'markdown' = 'markdown';
-  text_size: TextSize = 'normal';
-  text_align: 'left' | 'center' | 'right' = 'left';
-  icon?: Icon;
-  href?: {
+  private readonly tag: 'markdown' = 'markdown';
+  private text_size: TextSize = 'normal';
+  private text_align: 'left' | 'center' | 'right' = 'left';
+  private icon?: Icon;
+  private href?: {
     urlVal?: {
       url: string;
       pc_url?: string;
@@ -15,10 +15,10 @@ export class MarkdownComponent extends BaseComponent {
       android_url?: string;
     };
   };
-  content: string;
+  private content: string;
 
-  constructor(element_id: ValidIdentifier, content: string) {
-    super(element_id);
+  constructor(content: string) {
+    super();
     this.content = content;
   }
 

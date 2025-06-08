@@ -2,9 +2,9 @@ import { ChartSpec } from './chartSpec';
 import type { ChartSpecLegend } from './chartSpec';
 
 export class BarChartSpec extends ChartSpec {
-  xField: string;
-  yField: string;
-  seriesField?: string;
+  private xField: string;
+  private yField: string;
+  private seriesField?: string;
 
   constructor(
     title: { text: string },

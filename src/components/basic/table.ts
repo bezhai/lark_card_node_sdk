@@ -1,5 +1,5 @@
 import { BaseClass, HorizontalAlign, PxValue, VerticalAlign } from "../../common";
-import { BaseComponent, ValidIdentifier } from "./basic";
+import { BaseComponent } from "./basic";
 
 type PageSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 type RowHeight = 'low' | 'medium' | 'high' | 'auto' | `${number}px`;
@@ -149,8 +149,8 @@ export class TableComponent<T extends Record<string, any>> extends BaseComponent
   columns: TableColumn<Extract<keyof T, string>>[] = [];
   rows: T[] = [];
 
-  constructor(element_id: ValidIdentifier) {
-    super(element_id);
+  constructor() {
+    super();
   }
 
   public setMargin(margin: PxValue) {
