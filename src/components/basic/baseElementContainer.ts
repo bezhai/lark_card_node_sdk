@@ -3,6 +3,10 @@ import { BaseComponent } from './basic';
 export abstract class BaseElementContainer<T extends BaseComponent> extends BaseComponent {
   protected elements: T[] = [];
 
+  findElement(predicate: (element: T) => boolean): T | undefined {
+    return this.elements.find(predicate);
+  }
+
   pushElement(...elements: T[]): this {
     this.elements.push(...elements);
     return this;
