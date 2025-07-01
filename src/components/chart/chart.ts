@@ -1,5 +1,5 @@
-import type { ChartColorTheme } from '../../common/color';
-import { BaseComponent } from '../basic/basic';
+import type { ChartColorTheme } from '@common/color';
+import { BaseComponent } from '@basic/basic';
 import type { ChartSpec } from './chartSpec';
 
 export class ChartElement<T extends ChartSpec> extends BaseComponent {

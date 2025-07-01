@@ -1,6 +1,6 @@
-import { CornerRadiusType } from '../../common/style';
-import { PlainText } from '../../common/text';
-import { BaseComponent } from './basic';
+import { CornerRadiusType } from '@common/style';
+import { PlainText } from '@common/text';
+import { BaseComponent } from '@basic/basic';
 
 type ScaleType =
   | 'crop_center' // 居中裁剪模式

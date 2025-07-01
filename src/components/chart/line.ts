@@ -1,4 +1,4 @@
-import type { LineCurveType } from '../../common/style';
+import type { LineCurveType } from '@common/style';
 import { ChartSpec } from './chartSpec';
 import type { ChartSpecLegend } from './chartSpec';
 

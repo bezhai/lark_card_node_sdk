@@ -1,4 +1,4 @@
-import { TitleColor } from '../../common/color';
+import { TitleColor } from '@common/color';
 import {
   Width,
   VerticalAlign,
@@ -6,8 +6,8 @@ import {
   HorizontalAlign,
   FlexMode,
   PxValue,
-} from '../../common/style';
-import { BaseComponent } from './basic';
+  } from '@common/style';
+import { BaseComponent } from '@basic/basic';
 import type { ColumnElement } from './element';
 
 type Weight = 1 | 2 | 3 | 4 | 5;

@@ -1,4 +1,4 @@
-import { BaseClass } from '../../common/json';
+import { BaseClass } from '@common/json';
 
 // 移除复杂的类型定义，改用简单的字符串类型
 export type ValidIdentifier = string;

@@ -1,11 +1,12 @@
-import { BaseClass, HorizontalAlign, PxValue, VerticalAlign } from "../../common";
-import { BaseComponent } from "./basic";
+import { BaseClass } from "@common/json";
+import { HorizontalAlign, PxValue, VerticalAlign } from "@common/style";
+import { BaseComponent } from "@basic/basic";
 
 type PageSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 type RowHeight = 'low' | 'medium' | 'high' | 'auto' | `${number}px`;
 
 type TextAlign = 'left' | 'center' | 'right';
-type TextSize = "normal" | "heading";
+type TableTextSize = "normal" | "heading";
 type BackgroundStyle = 'none' | 'grey';
 type TextColor = 'default' | 'grey';
 
@@ -13,7 +14,7 @@ type ColumnDataType = 'text' | 'lark_md' | 'options' | 'number' | 'date' | 'pers
 
 export class HeaderStyle extends BaseClass {
   private text_align?: TextAlign;
-  private text_size?: TextSize;
+  private text_size?: TableTextSize;
   private background_style?: BackgroundStyle;
   private text_color?: TextColor;
   private bold?: boolean;
@@ -24,7 +25,7 @@ export class HeaderStyle extends BaseClass {
     return this;
   }
 
-  public setTextSize(text_size: TextSize) {
+  public setTextSize(text_size: TableTextSize) {
     this.text_size = text_size;
     return this;
   }

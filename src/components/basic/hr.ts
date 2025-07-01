@@ -1,5 +1,5 @@
-import { PxValue } from '../../common/style';
-import { BaseComponent } from './basic';
+import { PxValue } from '@common/style';
+import { BaseComponent } from '@basic/basic';
 
 export class HrComponent extends BaseComponent {
   private readonly tag: 'hr' = 'hr';

@@ -1,9 +1,9 @@
-import type { Behavior } from '../../common/behavior';
-import { ConfirmTips } from '../../common/confirm';
-import type { Icon } from '../../common/icon';
-import type { WidthType } from '../../common/style';
-import { PlainText } from '../../common/text';
-import { BaseComponent } from '../basic/basic';
+import type { Behavior } from '@common/behavior';
+import { ConfirmTips } from '@common/confirm';
+import type { Icon } from '@common/icon';
+import type { WidthType } from '@common/style';
+import { PlainText } from '@common/text';
+import { BaseComponent } from '@basic/basic';
 
 // 定义按钮类型
 type ButtonType =

@@ -1,9 +1,9 @@
-import { Color } from '../../common/color';
-import { Icon } from '../../common/icon';
-import { Direction, HorizontalAlign, PxValue, Spacing } from '../../common/style';
-import { CollapsiblePanelElement } from './element';
-import { BaseClass } from '../../common/json';
-import { BaseElementContainer } from './baseElementContainer';
+import { Color } from '@common/color';
+import { Icon } from '@common/icon';
+import { Direction, HorizontalAlign, PxValue, Spacing } from '@common/style';
+import { CollapsiblePanelElement } from '@basic/element';
+import { BaseClass } from '@common/json';
+import { BaseElementContainer } from '@basic/baseElementContainer';
 
 type HeaderTitleType = 'plain_text' | 'markdown';
 type IconPosition = 'left' | 'right' | 'follow_text';

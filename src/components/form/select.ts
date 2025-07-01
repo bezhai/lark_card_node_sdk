@@ -1,8 +1,8 @@
-import type { WidthType } from '../../common/style';
-import { Behavior } from '../../common/behavior';
-import { PlainText } from '../../common/text';
-import { SelectOption } from '../../common/selectOption';
-import { BaseComponent } from '../basic/basic';
+import type { WidthType } from '@common/style';
+import { Behavior } from '@common/behavior';
+import { PlainText } from '@common/text';
+import { SelectOption } from '@common/selectOption';
+import { BaseComponent } from '@basic/basic';
 
 export class SelectComponent extends BaseComponent {
   private readonly tag: 'select_static' = 'select_static';
