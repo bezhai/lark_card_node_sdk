@@ -16,10 +16,11 @@ export class DivComponent extends BaseComponent {
   private text: DivText;
   private icon?: Icon;
 
-  constructor(text: DivText) {
+  constructor(element_id: string, text: DivText) {
     super();
     this.tag = 'div';
     this.text = text;
+    this.setElementId(element_id);
   }
 
   setIcon(icon: Icon) {

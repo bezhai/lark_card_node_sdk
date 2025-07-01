@@ -1,4 +1,4 @@
-import { HorizontalAlign, PxValue, Spacing, VerticalAlign } from '@common/style';
+import { HorizontalAlign, PxValue, Spacing, VerticalAlign } from '../../common/style';
 
 export class WithPadding {
   private padding?: PxValue;
