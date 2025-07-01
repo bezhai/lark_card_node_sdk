@@ -1,15 +1,15 @@
-import { Behavior } from '../../common/behavior';
-import { Color } from '../../common/color';
+import { Behavior } from '@common/behavior';
+import { Color } from '@common/color';
 import {
   CornerRadiusType,
   HorizontalAlign,
   PxValue,
   Spacing,
   VerticalAlign,
-} from '../../common/style';
-import { PlainText } from '../../common/text';
-import { BaseElementContainer } from './baseElementContainer';
-import { InteractiveElement } from './element';
+  } from '@common/style';
+import { PlainText } from '@common/text';
+import { BaseElementContainer } from '@basic/baseElementContainer';
+import { InteractiveElement } from '@basic/element';
 
 // 定义可枚举的类型
 type BackgroundStyle = 'default' | 'laser' | Color;

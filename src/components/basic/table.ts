@@ -1,5 +1,6 @@
-import { BaseClass, HorizontalAlign, PxValue, VerticalAlign } from "../../common";
-import { BaseComponent } from "./basic";
+import { BaseClass } from "@common/json";
+import { HorizontalAlign, PxValue, VerticalAlign } from "@common/style";
+import { BaseComponent } from "@basic/basic";
 
 type PageSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 type RowHeight = 'low' | 'medium' | 'high' | 'auto' | `${number}px`;

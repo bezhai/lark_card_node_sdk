@@ -1,5 +1,5 @@
-import type { LegendOrient, LegendPosition } from '../../common/style';
-import { BaseClass } from '../../common/json';
+import type { LegendOrient, LegendPosition } from '@common/style';
+import { BaseClass } from '@common/json';
 
 export interface ChartSpecLegend {
   orient: LegendOrient;

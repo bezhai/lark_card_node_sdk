@@ -1,10 +1,10 @@
-import type { CardHeader } from './title';
-import { Config } from './config';
-import { CardElement } from '../components/basic/element';
-import { BaseClass } from '../common/json';
-import { CardLink } from './link';
-import { Direction, HorizontalAlign, PxValue, Spacing, VerticalAlign } from '../common/style';
-import { BaseElementContainer } from '../components/basic/baseElementContainer';
+import type { CardHeader } from '@card/title';
+import { Config } from '@card/config';
+import { CardElement } from '@basic/element';
+import { BaseClass } from '@common/json';
+import { CardLink } from '@card/link';
+import { Direction, HorizontalAlign, PxValue, Spacing, VerticalAlign } from '@common/style';
+import { BaseElementContainer } from '@basic/baseElementContainer';
 
 /**
  * 卡片主体

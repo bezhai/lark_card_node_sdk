@@ -1,6 +1,6 @@
-import type { Icon } from '../../common/icon';
-import { CommonText } from '../../common/text';
-import { BaseComponent } from './basic';
+import type { Icon } from '@common/icon';
+import { CommonText } from '@common/text';
+import { BaseComponent } from '@basic/basic';
 
 export class DivText extends CommonText {
   private lines?: number; // 内容最大显示行数，超出设置行的内容用... 省略。

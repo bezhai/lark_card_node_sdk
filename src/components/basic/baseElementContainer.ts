@@ -1,4 +1,4 @@
-import { BaseComponent } from './basic';
+import { BaseComponent } from '@basic/basic';
 
 export abstract class BaseElementContainer<T extends BaseComponent> extends BaseComponent {
   protected elements: T[] = [];

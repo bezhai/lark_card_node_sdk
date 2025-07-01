@@ -1,5 +1,5 @@
-import { BaseElementContainer } from '../basic/baseElementContainer';
-import type { FormElement } from '../basic/element';
+import { BaseElementContainer } from '@basic/baseElementContainer';
+import type { FormElement } from '@basic/element';
 
 export class FormComponent extends BaseElementContainer<FormElement> {
   private readonly tag: 'form' = 'form';

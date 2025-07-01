@@ -1,6 +1,6 @@
-import { Icon } from '../../common/icon';
-import { TextSize } from '../../common/text';
-import { BaseComponent } from './basic';
+import { Icon } from '@common/icon';
+import { TextSize } from '@common/text';
+import { BaseComponent } from '@basic/basic';
 
 export class MarkdownComponent extends BaseComponent {
   private readonly tag: 'markdown' = 'markdown';

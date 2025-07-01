@@ -1,6 +1,6 @@
-import { TitleColor } from '../common/color';
-import { PlainText } from '../common/text';
-import { BaseClass } from '../common/json';
+import { TitleColor } from '@common/color';
+import { PlainText } from '@common/text';
+import { BaseClass } from '@common/json';
 
 // 定义 TextTag 接口
 export interface TextTag {

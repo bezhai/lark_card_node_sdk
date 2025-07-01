@@ -1,22 +1,22 @@
-import { ChartElement } from '../chart/chart';
-import { LineChartSpec } from '../chart/line';
-import { PieChartSpec } from '../chart/pie';
-import { WordCloudChartSpec } from '../chart/wordCloud';
-import { FormComponent } from '../form/form';
-import { InputComponent } from '../form/input';
-import type { ButtonComponent, TableButtonComponent } from '../form/button';
-import type { SelectComponent } from '../form/select';
-import { CollapsiblePanelComponent } from './collapsiblePanel';
-import type { ColumnSet } from './column';
-import type { DivComponent } from './div';
-import type { HrComponent } from './hr';
-import type { ImgComponent } from './image';
-import type { InteractiveContainerComponent } from './interactiveContainer';
-import type { MarkdownComponent } from './markdown';
-import { CheckboxComponent } from '../form/checkbox';
-import { MultiSelectComponent } from '../form/multiSelect';
-import { BarChartSpec } from '../chart/bar';
-import { TableComponent } from './table';
+import { ChartElement } from '@components/chart/chart';
+import { LineChartSpec } from '@components/chart/line';
+import { PieChartSpec } from '@components/chart/pie';
+import { WordCloudChartSpec } from '@components/chart/wordCloud';
+import { FormComponent } from '@components/form/form';
+import { InputComponent } from '@components/form/input';
+import type { ButtonComponent, TableButtonComponent } from '@components/form/button';
+import type { SelectComponent } from '@components/form/select';
+import { CollapsiblePanelComponent } from '@basic/collapsiblePanel';
+import type { ColumnSet } from '@basic/column';
+import type { DivComponent } from '@basic/div';
+import type { HrComponent } from '@basic/hr';
+import type { ImgComponent } from '@basic/image';
+import type { InteractiveContainerComponent } from '@basic/interactiveContainer';
+import type { MarkdownComponent } from '@basic/markdown';
+import { CheckboxComponent } from '@components/form/checkbox';
+import { MultiSelectComponent } from '@components/form/multiSelect';
+import { BarChartSpec } from '@components/chart/bar';
+import { TableComponent } from '@basic/table';
 
 /**
  * 卡片基础组件类型，除了表单组件

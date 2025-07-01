@@ -1,7 +1,7 @@
-import type { WidthType } from '../../common/style';
-import { PlainText } from '../../common/text';
-import { SelectOption } from '../../common/selectOption';
-import { BaseComponent } from '../basic/basic';
+import type { WidthType } from '@common/style';
+import { PlainText } from '@common/text';
+import { SelectOption } from '@common/selectOption';
+import { BaseComponent } from '@basic/basic';
 
 export class MultiSelectComponent extends BaseComponent {
   private readonly tag: 'multi_select_static' = 'multi_select_static';
