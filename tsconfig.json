@@ -24,6 +24,7 @@
     "**/*.spec.ts",
     "test",
     "tests",
-    "__tests__"
+    "__tests__",
+    "**/__tests__/**"
   ]
 }
